@@ -205,11 +205,6 @@ section.pad{padding-block:4.5rem}
 .tip p{margin:0}
 
 /* what to pack */
-.progress{display:flex;align-items:center;gap:1rem;flex-wrap:wrap;background:var(--white);border:1.5px solid var(--line);border-radius:14px;padding:1rem 1.2rem;margin-bottom:1.6rem}
-.progress .track{flex:1;min-width:10rem;height:.6rem;background:var(--blush);border-radius:999px;overflow:hidden}
-.progress .fill{height:100%;width:0;background:var(--red);border-radius:999px;transition:width .3s}
-.progress output{font-weight:800;font-variant-numeric:tabular-nums;min-width:7.5rem}
-.linkbtn{background:none;border:0;font:inherit;font-size:.9rem;color:var(--red);font-weight:700;cursor:pointer;text-decoration:underline;text-underline-offset:3px;padding:0}
 .groups{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}
 @media (max-width:900px){.groups{grid-template-columns:1fr}}
 .grp{background:var(--white);border:1.5px solid var(--line);border-radius:16px;overflow:hidden;min-width:0}
@@ -219,18 +214,14 @@ section.pad{padding-block:4.5rem}
 .g-fun h3{background:var(--navy)}
 .g-day h3{background:var(--sky)}
 .grp ul{list-style:none;margin:0;padding:.3rem 0}
-.item{position:relative;display:flex;gap:.9rem;align-items:flex-start;padding:.85rem 1.2rem;cursor:pointer;border-top:1px solid var(--blush)}
+.item{display:flex;gap:.9rem;align-items:flex-start;padding:.85rem 1.2rem;border-top:1px solid var(--blush)}
 .grp li:first-child .item{border-top:0}
-.item:hover{background:var(--paper)}
-.item input{position:absolute;opacity:0;pointer-events:none}
-.box{flex:none;width:1.5rem;height:1.5rem;border:2px solid var(--line);border-radius:6px;display:grid;place-items:center;margin-top:.1rem;transition:background .15s,border-color .15s}
-.box svg{width:14px;height:14px;color:var(--white);opacity:0}
-.item input:checked + .box{background:var(--green);border-color:var(--green)}
-.item input:checked + .box svg{opacity:1}
-.item input:focus-visible + .box{outline:3px solid var(--sky);outline-offset:2px}
+.dot{flex:none;width:.6rem;height:.6rem;border-radius:50%;margin-top:.5rem}
+.g-church .dot{background:var(--red)}
+.g-fun .dot{background:var(--navy)}
+.g-day .dot{background:var(--sky)}
 .item b{display:block;font-weight:700;line-height:1.3}
 .item span.n{display:block;font-size:.88rem;color:var(--muted);margin-top:.1rem}
-.item input:checked ~ .t b{text-decoration:line-through;color:var(--muted)}
 
 /* register / waitlist */
 .before{font-weight:800;font-size:1.6rem;color:var(--red);margin:0 0 1rem}
@@ -499,34 +490,28 @@ footer ul a{text-underline-offset:3px}
   <div class="band band-cream"><div class="wrap"><h1>What to Pack</h1><span class="script">what's in my bag?</span></div></div>
   <section class="pad">
     <div class="wrap">
-      <div class="progress">
-        <output id="packCount" aria-live="polite">0 of 8 packed</output>
-        <div class="track" aria-hidden="true"><div class="fill" id="packFill"></div></div>
-        <button type="button" class="linkbtn" id="packReset">Start over</button>
-      </div>
-      <p class="note" style="margin-bottom:1.4rem">Tap each item as you pack it. Your checklist stays on this device.</p>
       <div class="groups">
         <div class="grp g-church">
           <h3><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M10 2h4v6h6v4h-6v10h-4V12H4V8h6z"/></svg>For church</h3>
           <ul>
-            <li><label class="item" for="p1"><input type="checkbox" id="p1"><span class="box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><path d="M5 12l5 5L20 7"/></svg></span><span class="t"><b>Bible</b><span class="n">For sessions and small groups</span></span></label></li>
-            <li><label class="item" for="p2"><input type="checkbox" id="p2"><span class="box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><path d="M5 12l5 5L20 7"/></svg></span><span class="t"><b>Agpeya</b><span class="n">For the hours of prayer</span></span></label></li>
-            <li><label class="item" for="p3"><input type="checkbox" id="p3"><span class="box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><path d="M5 12l5 5L20 7"/></svg></span><span class="t"><b>Tonya or veil</b><span class="n">Tonyas for guys, veils for girls</span></span></label></li>
+            <li><div class="item"><span class="dot" aria-hidden="true"></span><span class="t"><b>Bible</b><span class="n">For sessions and small groups</span></span></div></li>
+            <li><div class="item"><span class="dot" aria-hidden="true"></span><span class="t"><b>Agpeya</b><span class="n">For the hours of prayer</span></span></div></li>
+            <li><div class="item"><span class="dot" aria-hidden="true"></span><span class="t"><b>Tonya or veil</b><span class="n">Tonyas for guys, veils for girls</span></span></div></li>
           </ul>
         </div>
         <div class="grp g-fun">
           <h3><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.7-5.2 4.6 1.5 6.8L12 17l-6.1 3.4 1.5-6.8L2.2 9l6.9-.7z"/></svg>For the fun</h3>
           <ul>
-            <li><label class="item" for="p4"><input type="checkbox" id="p4"><span class="box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><path d="M5 12l5 5L20 7"/></svg></span><span class="t"><b>Galabeya</b><span class="n">For the special galabeya party</span></span></label></li>
-            <li><label class="item" for="p5"><input type="checkbox" id="p5"><span class="box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><path d="M5 12l5 5L20 7"/></svg></span><span class="t"><b>Your team jersey</b><span class="n">Represent your preferred team</span></span></label></li>
+            <li><div class="item"><span class="dot" aria-hidden="true"></span><span class="t"><b>Galabeya</b><span class="n">For the special galabeya party</span></span></div></li>
+            <li><div class="item"><span class="dot" aria-hidden="true"></span><span class="t"><b>Your team jersey</b><span class="n">Represent your preferred team</span></span></div></li>
           </ul>
         </div>
         <div class="grp g-day">
           <h3><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 3h8v3h3a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h3zm2 2v1h4V5z"/></svg>Everyday</h3>
           <ul>
-            <li><label class="item" for="p6"><input type="checkbox" id="p6"><span class="box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><path d="M5 12l5 5L20 7"/></svg></span><span class="t"><b>Refillable water bottle</b><span class="n">Florida in February is still warm</span></span></label></li>
-            <li><label class="item" for="p7"><input type="checkbox" id="p7"><span class="box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><path d="M5 12l5 5L20 7"/></svg></span><span class="t"><b>Personal hygiene kit</b><span class="n">Toiletries for the weekend</span></span></label></li>
-            <li><label class="item" for="p8"><input type="checkbox" id="p8"><span class="box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><path d="M5 12l5 5L20 7"/></svg></span><span class="t"><b>Extra space in your bag</b><span class="n">For the gifts you'll take home</span></span></label></li>
+            <li><div class="item"><span class="dot" aria-hidden="true"></span><span class="t"><b>Refillable water bottle</b><span class="n">Florida in February is still warm</span></span></div></li>
+            <li><div class="item"><span class="dot" aria-hidden="true"></span><span class="t"><b>Personal hygiene kit</b><span class="n">Toiletries for the weekend</span></span></div></li>
+            <li><div class="item"><span class="dot" aria-hidden="true"></span><span class="t"><b>Extra space in your bag</b><span class="n">For the gifts you'll take home</span></span></div></li>
           </ul>
         </div>
       </div>
@@ -693,21 +678,6 @@ var SITE = {
     var o = menu.classList.toggle('open'); burger.setAttribute('aria-expanded', o ? 'true' : 'false');
   });
   document.addEventListener('keydown', function(e){ if (e.key === 'Escape') closeMenus(); });
-
-  /* packing checklist */
-  var boxes = Array.prototype.slice.call(document.querySelectorAll('.groups input[type=checkbox]'));
-  var saved = {};
-  try { saved = JSON.parse(localStorage.getItem('encounterPack') || '{}') || {}; } catch(e) {}
-  boxes.forEach(function(b){ b.checked = !!saved[b.id]; b.addEventListener('change', update); });
-  function update(){
-    var n = 0, s = {};
-    boxes.forEach(function(b){ if (b.checked) { n++; s[b.id] = 1; } });
-    document.getElementById('packCount').textContent = n === boxes.length ? 'All packed!' : n + ' of ' + boxes.length + ' packed';
-    document.getElementById('packFill').style.width = (n / boxes.length * 100) + '%';
-    try { localStorage.setItem('encounterPack', JSON.stringify(s)); } catch(e) {}
-  }
-  document.getElementById('packReset').addEventListener('click', function(){ boxes.forEach(function(b){ b.checked = false; }); update(); });
-  update();
 
   /* copy email */
   document.getElementById('copyEmail').addEventListener('click', function(){
