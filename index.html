@@ -263,21 +263,35 @@ section.pad{padding-block:4.5rem}
 .facts li{background:var(--blush);color:var(--red-deep);font-weight:700;font-size:.88rem;padding:.35rem .85rem;border-radius:999px}
 
 /* travel page */
-.split{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem}
-@media (max-width:760px){.split{grid-template-columns:1fr}}
-.tile{background:var(--white);border:1.5px solid var(--line);border-radius:14px;padding:1.6rem;min-width:0}
-.tile h3{font-family:var(--poster);font-weight:400;text-transform:uppercase;font-size:1.6rem;margin:0 0 .4rem;color:var(--red)}
-.tile p{margin:0;color:var(--muted)}
-.tile .code{font-family:var(--serif);font-weight:900;font-size:2.4rem;color:var(--navy);line-height:1}
-.addr{display:flex;flex-wrap:wrap;gap:.6rem 1.2rem;align-items:center;background:var(--white);border:1.5px solid var(--line);border-radius:14px;padding:1.1rem 1.3rem;margin-top:1.2rem}
-.addr b{display:block}
-.addr a{color:var(--red);font-weight:700}
-.timeline{list-style:none;margin:0;padding:0}
-.timeline li{display:grid;grid-template-columns:7.5rem 1fr;gap:1rem;padding:1rem 0;border-bottom:1px solid var(--line)}
-.timeline li > *{min-width:0}
-.timeline b{font-family:var(--poster);font-weight:400;text-transform:uppercase;font-size:1.25rem;color:var(--red)}
-.timeline a{color:var(--red);font-weight:700}
-.tint{background:var(--blush)}
+.tsec{margin-top:3.5rem}
+.venue{display:grid;grid-template-columns:1.4fr 1fr;background:var(--white);border:1.5px solid var(--line);border-radius:16px;overflow:hidden}
+.venue > *{min-width:0;padding:1.8rem 2rem}
+.venue-main h2.head{font-size:clamp(1.7rem,3.4vw,2.3rem);margin-bottom:.7rem}
+.venue-main p{margin:0;color:var(--muted)}
+.venue-addr{background:var(--blush);display:flex;flex-direction:column;align-items:flex-start;gap:.3rem;justify-content:center}
+.venue-addr small{font-size:.7rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--red)}
+.venue-addr b{font-size:1.1rem;line-height:1.4;margin-bottom:.8rem}
+.venue-addr .btn{padding:.75rem 1.3rem;font-size:.82rem}
+@media (max-width:760px){.venue{grid-template-columns:1fr}}
+.tcards{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+@media (max-width:860px){.tcards{grid-template-columns:1fr}}
+.tcard{background:var(--white);border:1.5px solid var(--line);border-radius:16px;padding:1.5rem;min-width:0}
+.tcard .code{font-family:var(--poster);font-size:2.4rem;line-height:1;color:var(--navy);margin-bottom:.5rem}
+.tcard h3{margin:0 0 .4rem;font-size:1.1rem}
+.tcard p{margin:0;color:var(--muted);font-size:.95rem}
+.tcard-car{background:var(--navy);border-color:var(--navy);color:var(--white)}
+.tcard-car .ico{width:2.6rem;height:2.6rem;border-radius:50%;background:rgba(255,255,255,.12);color:var(--rose);display:grid;place-items:center;margin-bottom:.7rem}
+.tcard-car .ico svg{width:20px;height:20px}
+.tcard-car p{color:#c9d3ee}
+.days3{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+@media (max-width:860px){.days3{grid-template-columns:1fr}}
+.days3 li{background:var(--white);border:1.5px solid var(--line);border-radius:16px;overflow:hidden;min-width:0}
+.dhead{display:flex;justify-content:space-between;align-items:baseline;background:var(--red);color:var(--white);padding:.8rem 1.3rem}
+.dhead b{font-family:var(--poster);font-weight:400;text-transform:uppercase;font-size:1.4rem;letter-spacing:.02em}
+.dhead span{font-weight:700;font-size:.9rem;color:var(--rose)}
+.days3 p{margin:0;padding:1.1rem 1.3rem 1.3rem;color:var(--muted)}
+.days3 strong{color:var(--ink)}
+.days3 a{color:var(--red);font-weight:700}
 
 /* sunday social */
 .sshero{position:relative;color:var(--white);text-align:center;padding-block:clamp(4rem,9vw,6.5rem) clamp(6rem,11vw,8rem);background:linear-gradient(180deg,rgba(138,26,31,.82),rgba(110,74,54,.9)),url("images/riverboat.jpg") center 45%/cover var(--red)}
@@ -544,37 +558,50 @@ footer ul a{text-underline-offset:3px}
 
 <!-- TRAVEL -->
 <div class="page" id="page-travel" hidden>
-  <div class="band band-blush"><div class="wrap"><h1>Travel &amp; Stay</h1><span class="script">Titusville, Florida</span></div></div>
-  <section class="pad">
-    <div class="wrap narrow">
-      <div class="kicker">The venue</div>
-      <h2 class="head">St. Stephen Christian Retreat &amp; Conference Center</h2>
-      <p>The Encounter is held at St. Stephen Christian Retreat &amp; Conference Center in Titusville, on Florida's Space Coast. Lodging details will be shared when registration opens.</p>
-      <div class="addr">
-        <div><b>4951 S Washington Ave</b>Titusville, FL 32780</div>
-        <a href="https://www.google.com/maps/search/?api=1&query=St.+Stephen+Christian+Retreat+Conference+Center+Titusville+FL" target="_blank" rel="noopener">Open in Google Maps</a>
+  <div class="band band-blush" style="padding-bottom:clamp(5.5rem,10vw,7.5rem)"><div class="wrap"><h1>Travel &amp; Stay</h1><span class="script">Titusville, Florida</span></div></div>
+  <section style="padding-bottom:4.5rem">
+    <div class="wrap">
+      <div class="glance" role="list">
+        <div class="g" role="listitem"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></div><span><small>Where</small><b>St. Stephen Retreat Center</b></span></div>
+        <div class="g" role="listitem"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4"/></svg></div><span><small>When</small><b>Fri–Sun, Feb 19–21, 2027</b></span></div>
+        <div class="g" role="listitem"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.5 3.5a1.5 1.5 0 0 1 3 0V9l8 5v2l-8-2.5V19l2 1.5V22L12 21l-3.5 1v-1.5l2-1.5v-5.5l-8 2.5v-2l8-5z"/></svg></div><span><small>Fly into</small><b>Orlando (MCO) or Melbourne (MLB)</b></span></div>
+        <div class="g" role="listitem"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 17h14M4 17v-4l2-5h12l2 5v4M6 17v2M18 17v2"/><circle cx="7.5" cy="13.5" r="1"/><circle cx="16.5" cy="13.5" r="1"/></svg></div><span><small>Rides</small><b>Carpool link coming soon</b></span></div>
       </div>
-    </div>
-  </section>
-  <section class="pad tint">
-    <div class="wrap narrow">
-      <div class="kicker">Flying in</div>
-      <h2 class="head">Pick your airport</h2>
-      <div class="split">
-        <div class="tile"><div class="code">MCO</div><h3>Orlando International</h3><p>The most flight options, and usually the best fares.</p></div>
-        <div class="tile"><div class="code">MLB</div><h3>Melbourne Orlando Intl.</h3><p>A smaller, easier airport south of Titusville.</p></div>
+
+      <div class="tsec">
+        <div class="kicker">The venue</div>
+        <div class="venue">
+          <div class="venue-main">
+            <h2 class="head">St. Stephen Christian Retreat &amp; Conference Center</h2>
+            <p>On Florida's Space Coast in Titusville. Lodging is at the retreat center, and details will be shared with registered attendees.</p>
+          </div>
+          <div class="venue-addr">
+            <small>Address</small>
+            <b>4951 S Washington Ave<br>Titusville, FL 32780</b>
+            <a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=St.+Stephen+Christian+Retreat+Conference+Center+4951+S+Washington+Ave+Titusville+FL" target="_blank" rel="noopener">Open in Google Maps</a>
+          </div>
+        </div>
       </div>
-    </div>
-  </section>
-  <section class="pad">
-    <div class="wrap narrow">
-      <div class="kicker">Plan your weekend</div>
-      <h2 class="head">When to arrive and leave</h2>
-      <ul class="timeline">
-        <li><b>Friday</b><span>Arrive in the afternoon for check-in and the opening session.</span></li>
-        <li><b>Saturday</b><span>Full program: liturgy, talks, small groups and evening fellowship.</span></li>
-        <li><b>Sunday</b><span>Divine Liturgy and closing. If you're joining the <a href="#social">Sunday Social</a>, book an evening flight.</span></li>
-      </ul>
+
+      <div class="tsec">
+        <div class="kicker">Getting there</div>
+        <h2 class="head">Flights &amp; rides</h2>
+        <div class="tcards">
+          <div class="tcard"><div class="code">MCO</div><h3>Orlando International</h3><p>The most flight options and usually the best fares. About an hour's drive to Titusville.</p></div>
+          <div class="tcard"><div class="code">MLB</div><h3>Melbourne Orlando Intl.</h3><p>A smaller, easier airport south of Titusville. About 45 minutes by car.</p></div>
+          <div class="tcard tcard-car"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 17h14M4 17v-4l2-5h12l2 5v4M6 17v2M18 17v2"/><circle cx="7.5" cy="13.5" r="1"/><circle cx="16.5" cy="13.5" r="1"/></svg></div><h3>Carpool</h3><p>We'll share a carpool link so attendees can coordinate rides to and from the convention. Check back here and on Instagram.</p></div>
+        </div>
+      </div>
+
+      <div class="tsec">
+        <div class="kicker">Plan your weekend</div>
+        <h2 class="head">When to arrive &amp; leave</h2>
+        <ol class="days3">
+          <li><div class="dhead"><b>Friday</b><span>Feb 19</span></div><p><strong>Arrive in the afternoon</strong> for check-in and the opening session.</p></li>
+          <li><div class="dhead"><b>Saturday</b><span>Feb 20</span></div><p><strong>Full program:</strong> liturgy, talks, small groups and evening fellowship.</p></li>
+          <li><div class="dhead"><b>Sunday</b><span>Feb 21</span></div><p><strong>Divine Liturgy and closing.</strong> Joining the <a href="#social">Sunday Social</a> cruise? Book an evening flight.</p></li>
+        </ol>
+      </div>
     </div>
   </section>
 </div>
