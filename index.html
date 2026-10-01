@@ -21,7 +21,7 @@
 :root{
   --paper:#fffaf7; --blush:#f7e9e5; --cream:#fbf3e6;
   --red:#b8242a; --red-deep:#8a1a1f; --ink:#1c1717; --muted:#5f5552;
-  --navy:#1b2a5c; --sky:#2c63d6; --sky-soft:#dcebfb; --line:#e8d6d1; --white:#ffffff; --rose:#ffd9d3; --green:#2f7a4f;
+  --navy:#1b2a5c; --sky:#2c63d6; --sky-soft:#dcebfb; --line:#e8d6d1; --white:#ffffff; --rose:#ffd9d3; --green:#2f7a4f; --brown:#6e4a36; --brown-deep:#553826; --tan:#f0c79a;
   --serif:"Playfair Display", Georgia, "Times New Roman", serif;
   --poster:"Anton", Impact, "Arial Narrow", sans-serif;
   --script:"Allura", "Brush Script MT", cursive;
@@ -90,8 +90,9 @@ section.pad{padding-block:4.5rem}
 .hero .wrap{display:grid;grid-template-columns:1.25fr .75fr;gap:2.5rem;align-items:center;padding-bottom:5.5rem}
 .hero .wrap > *{min-width:0}
 @media (max-width:860px){.hero .wrap{grid-template-columns:1fr;padding-bottom:4.5rem}}
-.title{font-family:var(--poster);font-weight:400;text-transform:uppercase;line-height:.88;margin:0;font-size:clamp(4.2rem,13vw,9.5rem)}
-.title .l1{display:block;color:var(--ink);font-size:.62em}
+.presents{font-size:.8rem;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);margin-bottom:.8rem}
+.title{font-family:var(--poster);font-weight:400;text-transform:uppercase;line-height:.9;margin:0;font-size:clamp(3.6rem,10vw,7.6rem)}
+.title .l1{display:block;color:var(--ink);font-size:.72em}
 .title .l2{display:block;color:var(--red)}
 .hero .conv{font-weight:800;font-size:clamp(1.1rem,2.4vw,1.45rem);margin:1.4rem 0 .3rem}
 .hero .meta{color:var(--muted);margin-bottom:1.6rem}
@@ -109,6 +110,29 @@ section.pad{padding-block:4.5rem}
 .welcome{background:var(--red);color:var(--white);padding-block:3rem 4.5rem}
 .welcome h2.head span{font-family:var(--serif);font-weight:900;text-transform:none;color:var(--rose)}
 .welcome a{color:var(--white);font-weight:700}
+
+.person .from{font-size:.92rem;color:var(--muted);margin-top:.35rem;max-width:18rem}
+.hero .opens{display:inline-flex;align-items:center;gap:.5rem;background:var(--white);border:1.5px solid var(--line);border-radius:999px;padding:.4rem .9rem;font-size:.9rem;font-weight:700;margin-bottom:1.4rem}
+.hero .opens i{width:.55rem;height:.55rem;border-radius:50%;background:var(--red);display:block}
+
+/* fathers */
+.fathers{background:var(--brown);color:var(--white);padding-block:4rem;text-align:center}
+.fathers .kicker{color:var(--tan)}
+.fathers h2.head{margin-bottom:2.2rem}
+.frow{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;max-width:52rem;margin-inline:auto;list-style:none;padding:0}
+@media (max-width:640px){.frow{grid-template-columns:1fr;gap:1.6rem}}
+.frow li{min-width:0}
+.frow img{width:min(11rem,70%);aspect-ratio:1;object-fit:cover;border-radius:50%;margin:0 auto .9rem;border:6px solid var(--cream)}
+.frow b{display:block;font-size:1.1rem}
+.frow small{display:block;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:var(--tan);font-weight:700;margin-bottom:.15rem}
+
+/* social teaser */
+.teaser{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:center}
+.teaser > *{min-width:0}
+@media (max-width:820px){.teaser{grid-template-columns:1fr}}
+.teaser img,.boat img{width:100%;aspect-ratio:3/2;object-fit:cover;border-radius:16px;border:8px solid var(--white);box-shadow:0 22px 44px -24px rgba(28,23,23,.5)}
+.trio{font-family:var(--poster);text-transform:uppercase;font-size:clamp(1.4rem,3vw,1.9rem);letter-spacing:.04em;color:var(--brown);margin:.2rem 0 1rem}
+.trio span{color:var(--red)}
 
 /* photo strip: kept modest so screenshots aren't blown up */
 .strip{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;background:var(--ink)}
@@ -164,6 +188,17 @@ section.pad{padding-block:4.5rem}
 .c25 h3{font-weight:800;font-size:1.15rem;letter-spacing:.06em;text-transform:uppercase;color:var(--sky)}
 .c25 h3 b{display:block;font-size:3.2rem;letter-spacing:.02em;color:var(--navy);line-height:.95}
 .c25 .tag{background:var(--navy);color:var(--white)}
+
+.feat{display:grid;grid-template-columns:auto 1fr;gap:2.5rem;align-items:center}
+.feat > *{min-width:0}
+@media (max-width:760px){.feat{grid-template-columns:1fr;text-align:center}.feat .spk{margin-inline:auto}}
+.spk{position:relative;width:13rem;aspect-ratio:1}
+.spk img{width:100%;height:100%;object-fit:cover;border-radius:50%;border:8px solid var(--white);box-shadow:0 15px 30px -18px rgba(138,26,31,.5)}
+.spk::after{content:"";position:absolute;right:-8%;top:40%;width:22%;aspect-ratio:1;border-radius:50%;background:var(--red)}
+.theme-title{font-family:var(--poster);font-weight:400;text-transform:uppercase;line-height:.92;margin:0 0 1rem;font-size:clamp(2.8rem,7vw,4.4rem);color:var(--brown)}
+.theme-title span{display:block;color:var(--red)}
+.facts{display:flex;flex-wrap:wrap;gap:.5rem;list-style:none;padding:0;margin:1rem 0 1.4rem}
+.facts li{background:var(--blush);color:var(--red-deep);font-weight:700;font-size:.88rem;padding:.35rem .85rem;border-radius:999px}
 
 /* travel page */
 .split{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem}
@@ -228,6 +263,13 @@ section.pad{padding-block:4.5rem}
 .g-day .dot{background:var(--sky)}
 .item b{display:block;font-weight:700;line-height:1.3}
 .item span.n{display:block;font-size:.88rem;color:var(--muted);margin-top:.1rem}
+
+/* countdown */
+.count{display:grid;grid-template-columns:repeat(4,1fr);gap:.8rem;max-width:30rem;margin:0 auto 1.4rem;list-style:none;padding:0}
+.count li{background:var(--white);border:1.5px solid var(--line);border-radius:12px;padding:.8rem .4rem;text-align:center}
+.count b{display:block;font-family:var(--poster);font-weight:400;font-size:clamp(1.8rem,6vw,2.6rem);line-height:1;color:var(--red);font-variant-numeric:tabular-nums}
+.count small{font-size:.72rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.opensline{font-weight:800;font-size:1.15rem;margin-bottom:1rem}
 
 /* register / waitlist */
 .before{font-weight:800;font-size:1.6rem;color:var(--red);margin:0 0 1rem}
@@ -311,17 +353,20 @@ footer ul a{text-underline-offset:3px}
   <div class="hero">
     <div class="wrap">
       <div>
-        <h1 class="title"><span class="l1">The Encounter</span><span class="l2">2027</span></h1>
-        <div class="conv">Grads &amp; Young Professionals Convention</div>
+        <div class="presents">The Encounter 2027 presents</div>
+        <h1 class="title"><span class="l1">Walking</span><span class="l2">Behind Him</span></h1>
+        <div class="conv">Grads &amp; Young Professionals Convention · Ages 22–40</div>
         <div class="meta"><b>Feb 19–21, 2027</b> · St. Stephen Christian Retreat &amp; Conference Center · Titusville, FL</div>
+        <div class="opens" data-opens-pill><i aria-hidden="true"></i>Registration opens November 1 at 8:00 PM EST</div>
         <div class="hero-ctas">
           <a class="btn" href="#register" data-cta></a>
-          <a class="btn btn-ghost" href="#theme">Past Themes</a>
+          <a class="btn btn-ghost" href="#theme">Theme &amp; Speaker</a>
         </div>
       </div>
       <div class="person">
-        <div class="circle"><img src="images/bishops.jpg" alt="Our beloved Metropolitan and bishops"></div>
-        <div class="who"><small>With our beloved</small><span>Metropolitan &amp; Bishops</span></div>
+        <div class="circle"><img src="images/speaker.jpg" alt="Fr. Anastasi Saint Antony"></div>
+        <div class="who"><small>Guest speaker</small><span>Fr. Anastasi Saint Antony</span></div>
+        <div class="from">From the Coptic Orthodox Diocese of New York &amp; New England</div>
       </div>
     </div>
     <svg class="curve" viewBox="0 0 1440 60" preserveAspectRatio="none" aria-hidden="true"><path d="M0 60V20Q720 70 1440 20V60z" style="fill:var(--red)"/></svg>
@@ -331,7 +376,33 @@ footer ul a{text-underline-offset:3px}
     <div class="wrap narrow">
       <h2 class="head">Welcome to <span>The Encounter</span></h2>
       <p>The Encounter is the graduates and young professionals convention of the Coptic Orthodox Diocese of the Southern United States. Every February, young adults ages 22–40 from across the diocese gather for a weekend of prayer, liturgy, talks and fellowship with our fathers the bishops and priests.</p>
-      <p>The 2027 theme and speakers will be announced soon. Stay tuned to our <a href="https://www.instagram.com/theencountergypsus/" target="_blank" rel="noopener">Instagram</a> and this site, and don't miss the <a href="#social">Sunday Social</a>. We can't wait to welcome you.</p>
+      <p>This year's theme is <a href="#theme">Walking Behind Him</a>. Join us for sessions with our guest speaker Fr. Anastasi Saint Antony, with the presence of our beloved fathers H.E. Metropolitan Youssef, H.G. Bishop Basil and H.G. Bishop Gregory.</p>
+      <p>Registration opens <b>November 1 at 8:00 PM EST</b>. Stay tuned to our <a href="https://www.instagram.com/theencountergypsus/" target="_blank" rel="noopener">Instagram</a> and this site, and don't miss the <a href="#social">Sunday Social</a> river cruise. We can't wait to welcome you.</p>
+    </div>
+  </section>
+
+  <section class="fathers">
+    <div class="wrap">
+      <div class="kicker">With the presence of</div>
+      <h2 class="head">Our beloved Metropolitan &amp; Bishops</h2>
+      <ul class="frow">
+        <li><img src="images/metropolitan-youssef.jpg" alt="H.E. Metropolitan Youssef"><small>H.E.</small><b>Metropolitan Youssef</b></li>
+        <li><img src="images/bishop-basil.jpg" alt="H.G. Bishop Basil"><small>H.G.</small><b>Bishop Basil</b></li>
+        <li><img src="images/bishop-gregory.jpg" alt="H.G. Bishop Gregory"><small>H.G.</small><b>Bishop Gregory</b></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="pad" style="background:var(--cream)">
+    <div class="wrap teaser">
+      <div>
+        <div class="kicker">Sunday Social</div>
+        <h2 class="head">Post-convention river cruise</h2>
+        <div class="trio">Cruise <span>•</span> Dinner <span>•</span> Fellowship</div>
+        <p>Join us for our post-convention outing on Sunday afternoon, February 21, with our beloved fathers.</p>
+        <a class="btn" href="#social">Sunday Social details</a>
+      </div>
+      <img src="images/riverboat.jpg" alt="The riverboat for the Sunday Social cruise">
     </div>
   </section>
 
@@ -345,10 +416,11 @@ footer ul a{text-underline-offset:3px}
     <div class="wrap narrow">
       <h2 class="head">Frequently asked questions</h2>
       <ul class="info">
-        <li><details><summary>What's The Encounter all about?</summary><div class="body"><p>A weekend retreat for grads and young professionals built around the liturgy, spiritual talks, small-group conversation and time with our fathers. Each year has its own theme. 2026 was "Do Not Pass By Your Servant" and 2025 was "Into the Deep."</p></div></details></li>
+        <li><details><summary>What's The Encounter all about?</summary><div class="body"><p>A weekend retreat for grads and young professionals built around the liturgy, spiritual talks, small-group conversation and time with our fathers. Each year has its own theme. The 2027 theme is "Walking Behind Him." Past themes were "Do Not Pass By Your Servant" (2026) and "Into the Deep" (2025).</p></div></details></li>
         <li><details><summary>Who's invited?</summary><div class="body"><p>Graduates and young professionals ages 22–40.</p></div></details></li>
-        <li><details><summary>How do I register?</summary><div class="body"><p>Head to the <a href="#register">registration page</a>. Spots are limited, and both of the last two years filled up, so register early.</p></div></details></li>
+        <li><details><summary>How do I register?</summary><div class="body"><p>Registration opens <b>November 1 at 8:00 PM EST</b> on our <a href="#register">registration page</a>. Spots are limited, and both of the last two years filled up, so register early. You can add a Sunday Social ticket as part of your registration.</p></div></details></li>
         <li><details><summary>Which airport should I use, and when should I arrive and leave?</summary><div class="body"><p>Orlando (MCO) or Melbourne (MLB). Plan to arrive Friday afternoon and leave Sunday evening if you're joining the social. See <a href="#travel">Travel &amp; Stay</a>.</p></div></details></li>
+        <li><details><summary>Who is speaking this year?</summary><div class="body"><p>Our guest speaker is Fr. Anastasi Saint Antony from the Coptic Orthodox Diocese of New York &amp; New England, with the presence of H.E. Metropolitan Youssef, H.G. Bishop Basil and H.G. Bishop Gregory.</p></div></details></li>
         <li><details><summary>Will the convention provide transportation?</summary><div class="body"><p>We will share a carpool link so attendees can coordinate rides to and from the convention. Check back here and on our Instagram for the link.</p></div></details></li>
         <li><details><summary>What if it's full?</summary><div class="body"><p>Once registration closes, we'll open a waitlist on this site. If any spots open up, we'll reach out to you.</p></div></details></li>
         <li><details><summary>Where can I ask questions and stay in the loop?</summary><div class="body"><p>Use our <a href="#contact">contact form</a>, email us, or DM us on Instagram at @theencountergypsus.</p></div></details></li>
@@ -359,16 +431,28 @@ footer ul a{text-underline-offset:3px}
 
 <!-- THEME -->
 <div class="page" id="page-theme" hidden>
-  <div class="band band-navy"><div class="wrap"><h1>Theme &amp; Speakers</h1><span class="script">every year, a new word</span></div></div>
+  <div class="band band-navy"><div class="wrap"><h1>Theme &amp; Speakers</h1><span class="script">Walking Behind Him</span></div></div>
   <section class="pad">
-    <div class="wrap narrow announce">
-      <div class="qmark" aria-hidden="true">?</div>
+    <div class="wrap narrow feat">
+      <div class="spk"><img src="images/speaker.jpg" alt="Fr. Anastasi Saint Antony"></div>
       <div>
-        <div class="kicker">The Encounter 2027</div>
-        <h2 class="head">Theme coming soon</h2>
-        <p>The 2027 theme and speakers will be revealed on our Instagram first. Turn on post notifications for @theencountergypsus so you don't miss it.</p>
+        <div class="kicker">GYP ’27 · Feb 19–21, 2027</div>
+        <h2 class="theme-title">Walking<span>Behind Him</span></h2>
+        <p><b>Guest speaker: Fr. Anastasi Saint Antony</b><br>From the Coptic Orthodox Diocese of New York &amp; New England</p>
+        <ul class="facts"><li>Grads &amp; young professionals</li><li>Ages 22–40</li><li>Titusville, Florida</li></ul>
         <a class="btn" href="#register" data-cta></a>
       </div>
+    </div>
+  </section>
+  <section class="fathers">
+    <div class="wrap">
+      <div class="kicker">With the presence of</div>
+      <h2 class="head">Our beloved fathers</h2>
+      <ul class="frow">
+        <li><img src="images/metropolitan-youssef.jpg" alt="H.E. Metropolitan Youssef"><small>H.E.</small><b>Metropolitan Youssef</b></li>
+        <li><img src="images/bishop-basil.jpg" alt="H.G. Bishop Basil"><small>H.G.</small><b>Bishop Basil</b></li>
+        <li><img src="images/bishop-gregory.jpg" alt="H.G. Bishop Gregory"><small>H.G.</small><b>Bishop Gregory</b></li>
+      </ul>
     </div>
   </section>
   <section class="pad years">
@@ -437,20 +521,27 @@ footer ul a{text-underline-offset:3px}
 
 <!-- SOCIAL -->
 <div class="page" id="page-social" hidden>
-  <div class="band band-red" style="padding-bottom:clamp(5.5rem,11vw,8.5rem)"><div class="wrap"><h1>Sunday Social</h1><span class="script">an afternoon with our fathers</span></div></div>
+  <div class="band band-red" style="padding-bottom:clamp(5.5rem,11vw,8.5rem)"><div class="wrap"><h1>Sunday Social</h1><span class="script">cruise · dinner · fellowship</span></div></div>
   <section style="padding-bottom:4.5rem">
     <div class="wrap">
       <div class="glance">
-        <div class="g"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4"/></svg></div><small>When</small><b>Sunday, after the convention closes</b></div>
-        <div class="g"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></div><small>Where</small><b>2027 venue announced soon</b></div>
+        <div class="g"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4"/></svg></div><small>When</small><b>Sunday afternoon, Feb 21, 2027</b></div>
+        <div class="g"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 18c1.5 1.3 3 1.3 4.5 0s3-1.3 4.5 0 3 1.3 4.5 0 3-1.3 4.5 0"/><path d="M5 15l1-5h12l1 5M9 10V6h6v4M11 6V3"/></svg></div><small>What</small><b>River cruise with dinner</b></div>
         <div class="g"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.8-3.6 3.4-5.5 6.5-5.5s5.7 1.9 6.5 5.5"/><path d="M16 4.6a3.5 3.5 0 0 1 0 6.8M18.5 14.8c1.6.8 2.6 2.5 3 5.2"/></svg></div><small>Who</small><b>Registered Encounter attendees</b></div>
         <div class="g"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 8a2 2 0 0 0 2-2h14a2 2 0 0 0 2 2v2a2 2 0 0 0 0 4v2a2 2 0 0 0-2 2H5a2 2 0 0 0-2-2v-2a2 2 0 0 0 0-4z"/><path d="M14 6v12" stroke-dasharray="2 2"/></svg></div><small>How to join</small><b>Add a ticket when you register</b></div>
       </div>
 
       <div style="margin-top:3.5rem">
-        <div class="kicker">What it is</div>
-        <h2 class="head">Games, food and fellowship</h2>
-        <p class="lede">Many of our fathers stay a little longer so we can spend more time together. After the convention wraps up on Sunday, we head out for an afternoon of games, food and fellowship with the bishops and priests.</p>
+        <div class="teaser">
+          <div>
+            <div class="kicker">GYP ’27 Sunday Social</div>
+            <h2 class="head">All aboard!</h2>
+            <div class="trio">Cruise <span>•</span> Dinner <span>•</span> Fellowship</div>
+            <p class="lede">Join us for our post-convention outing on Sunday afternoon! After the convention wraps up, we'll head out on a riverboat cruise with dinner and time together with our beloved fathers.</p>
+            <p>Add a Sunday Social ticket when you register. It's limited to Encounter attendees.</p>
+          </div>
+          <div class="boat"><img src="images/riverboat.jpg" alt="The riverboat for the Sunday Social cruise"></div>
+        </div>
       </div>
 
       <div style="margin-top:2.5rem">
@@ -483,7 +574,7 @@ footer ul a{text-underline-offset:3px}
 
       <div class="tip">
         <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21 16v-2l-8-5V3.5a1.5 1.5 0 0 0-3 0V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5z"/></svg>
-        <p><b>Flying out Sunday?</b> The social runs into the evening, so book a later flight if you want to join.</p>
+        <p><b>Flying out Sunday?</b> The cruise and dinner run into the evening, so book a later flight if you want to join.</p>
       </div>
     </div>
   </section>
@@ -527,8 +618,8 @@ footer ul a{text-underline-offset:3px}
 <div class="page" id="page-register" hidden>
   <div data-mode="register">
     <div class="band band-navy"><div class="wrap">
-      <h1>Register Now!</h1>
-      <p>Registration for The Encounter 2027 is open to graduates and young professionals ages 22–40. Spots are limited and fill up every year, so register early to save your place.</p>
+      <h1 data-reg-title>Register Now!</h1>
+      <p>The Encounter 2027: <b>Walking Behind Him</b> · February 19–21, 2027 · Titusville, Florida. Open to graduates and young professionals ages 22–40. Spots are limited and fill up every year, so register early to save your place.</p>
     </div></div>
     <section class="pad">
       <div class="wrap narrow">
@@ -537,7 +628,18 @@ footer ul a{text-underline-offset:3px}
           <li>After the convention wraps up Sunday, we'll have our <a href="#social">Sunday Social</a>. You can add a ticket as part of your registration!</li>
           <li>Please note that we can't offer refunds for cancellations, or allow spot switching or reselling.</li>
         </ol>
-        <div class="center"><a class="btn" data-go target="_blank" rel="noopener">Register</a><p class="note" data-soon hidden>The registration link will be posted here soon.</p></div>
+        <div class="center">
+          <div data-countdown hidden>
+            <p class="opensline">Registration opens November 1 at 8:00 PM EST</p>
+            <ul class="count" aria-live="off">
+              <li><b data-d>0</b><small>Days</small></li>
+              <li><b data-h>0</b><small>Hours</small></li>
+              <li><b data-m>0</b><small>Min</small></li>
+              <li><b data-s>0</b><small>Sec</small></li>
+            </ul>
+          </div>
+          <a class="btn" data-go target="_blank" rel="noopener">Register</a><p class="note" data-soon hidden>The registration link will be posted here soon.</p>
+        </div>
       </div>
     </section>
   </div>
@@ -629,7 +731,8 @@ footer ul a{text-underline-offset:3px}
    ============================================================ */
 var SITE = {
   mode: "register",
-  registrationUrl: "",   // paste the registration link here
+  registrationUrl: "https://www.zeffy.com/en-US/ticketing/the-encounter--2027-2",
+  registrationOpens: "2026-11-01T20:00:00-05:00",   // Nov 1, 8:00 PM EST
   waitlistUrl: "",       // paste the waitlist form link here
   email: "theencountergypsus@gmail.com"
 };
@@ -639,15 +742,38 @@ var SITE = {
   var ctaLabel = reg ? "Register" : "Waitlist";
   document.querySelectorAll('[data-cta]').forEach(function(a){ a.textContent = a.closest('.menu') ? ctaLabel : (reg ? "Register Now" : "Join the Waitlist"); });
   document.querySelectorAll('[data-cta-text]').forEach(function(a){ a.textContent = ctaLabel; });
-  document.getElementById('bar').innerHTML = reg
-    ? '<a href="#register">Register now</a> and <a href="#social">join the Sunday Social</a>!'
-    : '<a href="#social">Join the social</a> and <a href="#register">join the waitlist</a>!';
+  var opensAt = Date.parse(SITE.registrationOpens || '') || 0;
+  var notYet = reg && Date.now() < opensAt;
+  document.getElementById('bar').innerHTML = !reg
+    ? '<a href="#social">Join the social</a> and <a href="#register">join the waitlist</a>!'
+    : notYet
+      ? '<a href="#register">Registration opens Nov 1 at 8:00 PM EST</a> · Walking Behind Him · Feb 19–21, 2027'
+      : '<a href="#register">Register now</a> and <a href="#social">join the Sunday Social</a>!';
   document.querySelectorAll('[data-mode]').forEach(function(el){ el.hidden = el.dataset.mode !== (reg ? "register" : "waitlist"); });
   var url = reg ? SITE.registrationUrl : SITE.waitlistUrl;
   document.querySelectorAll('[data-mode="' + (reg ? "register" : "waitlist") + '"] [data-go]').forEach(function(b){
     if (url) { b.href = url; }
     else { b.removeAttribute('href'); b.setAttribute('aria-disabled','true'); b.nextElementSibling.hidden = false; }
   });
+
+  /* registration countdown: before it opens, the button waits and a countdown shows */
+  var cd = document.querySelector('[data-countdown]'), go = document.querySelector('[data-mode="register"] [data-go]');
+  document.querySelectorAll('[data-opens-pill]').forEach(function(el){ el.hidden = !notYet; });
+  if (notYet && cd && go) {
+    cd.hidden = false;
+    document.querySelector('[data-reg-title]').textContent = 'Registration Opens Soon!';
+    go.removeAttribute('href'); go.setAttribute('aria-disabled','true'); go.textContent = 'Opens Nov 1 · 8:00 PM EST';
+    var tick = function(){
+      var ms = opensAt - Date.now();
+      if (ms <= 0) { location.reload(); return; }
+      var t = Math.floor(ms / 1000);
+      cd.querySelector('[data-d]').textContent = Math.floor(t / 86400);
+      cd.querySelector('[data-h]').textContent = Math.floor(t % 86400 / 3600);
+      cd.querySelector('[data-m]').textContent = Math.floor(t % 3600 / 60);
+      cd.querySelector('[data-s]').textContent = t % 60;
+    };
+    tick(); setInterval(tick, 1000);
+  }
   document.getElementById('emailText').textContent = SITE.email;
 
   /* pages */
