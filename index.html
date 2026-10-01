@@ -129,6 +129,33 @@ section.pad{padding-block:4.5rem}
 .btn-light:hover{background:var(--white);border-color:var(--white)}
 @media (max-width:760px){.spkband{text-align:center}}
 
+/* home highlights: 3 cards in a row */
+.highlights{background:var(--cream)}
+.hl{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}
+@media (max-width:900px){.hl{grid-template-columns:1fr}}
+.hc{display:flex;flex-direction:column;border-radius:18px;overflow:hidden;text-decoration:none;min-width:0;transition:transform .15s,box-shadow .15s;box-shadow:0 16px 36px -24px rgba(28,23,23,.5)}
+.hc:hover{transform:translateY(-4px);box-shadow:0 22px 44px -22px rgba(28,23,23,.55)}
+.hc h3{margin:.1rem 0 .5rem;line-height:1.1}
+.hc p{margin:0 0 1.2rem;font-size:.95rem}
+.more-link{margin-top:auto;font-weight:800;font-size:.85rem;letter-spacing:.06em;text-transform:uppercase}
+.more-link i{font-style:normal;display:inline-block;transition:transform .15s}
+.hc:hover .more-link i{transform:translateX(4px)}
+.hc-theme{background:var(--red);color:var(--white);padding:2rem 1.8rem}
+.hc-theme .kicker{color:var(--rose)}
+.hc-title{font-family:var(--poster);font-weight:400;text-transform:uppercase;font-size:clamp(2.6rem,5vw,3.4rem);line-height:.92!important}
+.hc-title span{display:block;color:var(--rose)}
+.hc-speaker{background:var(--brown);color:var(--white);padding:2rem 1.8rem;align-items:flex-start}
+.hc-speaker img{width:6.5rem;height:6.5rem;object-fit:cover;border-radius:50%;border:5px solid var(--cream);margin-bottom:1rem}
+.hc-speaker .kicker{color:var(--tan)}
+.hc-speaker h3{font-family:var(--poster);font-weight:400;text-transform:uppercase;font-size:1.9rem}
+.hc-speaker p{color:var(--cream)}
+.hc-social{background:var(--white);color:var(--ink)}
+.hc-social img{width:100%;height:11rem;object-fit:cover}
+.hc-body{padding:1.5rem 1.8rem 2rem;display:flex;flex-direction:column;flex:1}
+.hc-social h3{font-family:var(--poster);font-weight:400;text-transform:uppercase;font-size:1.6rem;color:var(--brown)}
+.hc-social p{color:var(--muted)}
+.hc-social .more-link{color:var(--red)}
+
 /* fathers */
 .fathers{background:var(--brown);color:var(--white);padding-block:4rem;text-align:center}
 .fathers .kicker{color:var(--tan)}
@@ -367,8 +394,7 @@ footer ul a{text-underline-offset:3px}
   <div class="hero">
     <div class="wrap">
       <div>
-        <div class="presents">The Encounter 2027 presents</div>
-        <h1 class="title"><span class="l1">Walking</span><span class="l2">Behind Him</span></h1>
+        <h1 class="title"><span class="l1">The Encounter</span><span class="l2">2027</span></h1>
         <div class="conv">Grads &amp; Young Professionals Convention · Ages 22–40</div>
         <div class="meta"><b>Feb 19–21, 2027</b> · St. Stephen Christian Retreat &amp; Conference Center · Titusville, FL</div>
         <div class="opens" data-opens-pill><i aria-hidden="true"></i>Registration opens November 1 at 8:00 PM EST</div>
@@ -400,28 +426,32 @@ footer ul a{text-underline-offset:3px}
     </div>
   </section>
 
-  <section class="fathers">
-    <div class="wrap narrow feat spkband">
-      <div class="spk"><img src="images/speaker.jpg" alt="Fr. Anastasi Saint Antony"></div>
-      <div>
-        <div class="kicker">Guest speaker</div>
-        <h2 class="head">Fr. Anastasi Saint Antony</h2>
-        <p>From the Coptic Orthodox Diocese of New York &amp; New England, joining us for <b>Walking Behind Him</b>.</p>
-        <a class="btn btn-light" href="#theme">Theme &amp; Speaker</a>
+  <section class="pad highlights">
+    <div class="wrap">
+      <div class="hl">
+        <a class="hc hc-theme" href="#theme">
+          <div class="kicker">2027 Theme</div>
+          <h3 class="hc-title">Walking<span>Behind Him</span></h3>
+          <p>Feb 19–21, 2027 · Titusville, FL</p>
+          <span class="more-link">Theme &amp; Speaker <i aria-hidden="true">→</i></span>
+        </a>
+        <a class="hc hc-speaker" href="#theme">
+          <img src="images/speaker.jpg" alt="Fr. Anastasi Saint Antony">
+          <div class="kicker">Guest Speaker</div>
+          <h3>Fr. Anastasi Saint Antony</h3>
+          <p>From the Coptic Orthodox Diocese of New York &amp; New England</p>
+          <span class="more-link">Meet the speaker <i aria-hidden="true">→</i></span>
+        </a>
+        <a class="hc hc-social" href="#social">
+          <img src="images/riverboat.jpg" alt="The riverboat for the Sunday Social cruise">
+          <div class="hc-body">
+            <div class="kicker">Sunday Social</div>
+            <h3>Cruise • Dinner • Fellowship</h3>
+            <p>Our post-convention outing on Sunday afternoon, Feb 21.</p>
+            <span class="more-link">Social details <i aria-hidden="true">→</i></span>
+          </div>
+        </a>
       </div>
-    </div>
-  </section>
-
-  <section class="pad" style="background:var(--cream)">
-    <div class="wrap teaser">
-      <div>
-        <div class="kicker">Sunday Social</div>
-        <h2 class="head">Post-convention river cruise</h2>
-        <div class="trio">Cruise <span>•</span> Dinner <span>•</span> Fellowship</div>
-        <p>Join us for our post-convention outing on Sunday afternoon, February 21, with our beloved fathers.</p>
-        <a class="btn" href="#social">Sunday Social details</a>
-      </div>
-      <img src="images/riverboat.jpg" alt="The riverboat for the Sunday Social cruise">
     </div>
   </section>
 
