@@ -652,6 +652,7 @@ footer ul a{text-underline-offset:3px}
           </div>
           <label for="cEmail">Email <small>(required)</small><input id="cEmail" name="email" type="email" required autocomplete="email"></label>
           <label for="cMsg">Message <small>(required)</small><textarea id="cMsg" name="message" required></textarea></label>
+          <input type="text" name="_honey" id="cHoney" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
           <div><button class="btn" type="submit" id="cSubmit">Submit</button></div>
           <p class="err" id="cErr" hidden></p>
         </form>
@@ -786,10 +787,22 @@ var SITE = {
     err.hidden = true;
     if (!form.reportValidity()) return;
     var btn = document.getElementById('cSubmit'); btn.disabled = true; btn.textContent = 'Sending…';
-    var data = { first_name: form.first_name.value, last_name: form.last_name.value, email: form.email.value, message: form.message.value, _subject: 'New message from The Encounter website' };
+    if (form._honey.value) { form.hidden = true; document.getElementById('cDone').hidden = false; return; }
+    var name = form.first_name.value.trim() + ' ' + form.last_name.value.trim();
+    var data = {
+      'Name': name,
+      'Email': form.email.value.trim(),
+      'Message': form.message.value.trim(),
+      '_replyto': form.email.value.trim(),
+      '_subject': 'Website message from ' + name,
+      '_template': 'table'
+    };
     fetch('https://formsubmit.co/ajax/' + SITE.email, { method: 'POST', headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' }, body: JSON.stringify(data) })
       .then(function(r){ if (!r.ok) throw new Error(); return r.json(); })
-      .then(function(){ form.hidden = true; document.getElementById('cDone').hidden = false; })
+      .then(function(j){
+        if (!j || String(j.success) !== 'true') throw new Error(j && j.message);
+        form.hidden = true; document.getElementById('cDone').hidden = false;
+      })
       .catch(function(){
         err.textContent = "Your message couldn't be sent from here. Please email us at " + SITE.email + " instead.";
         err.hidden = false; btn.disabled = false; btn.textContent = 'Submit';
