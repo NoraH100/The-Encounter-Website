@@ -145,17 +145,19 @@ section.pad{padding-block:4.5rem}
 .hc-social p{color:var(--muted)}
 .hc-social .more-link{color:var(--red)}
 
-/* 2026 group photo */
-.gyp26{background:var(--paper)}
-.g26{display:grid;grid-template-columns:1.1fr .9fr;gap:3rem;align-items:center}
-.g26 > *{min-width:0}
-@media (max-width:820px){.g26{grid-template-columns:1fr}}
-.g26-photo{margin:0;background:var(--white);padding:.8rem .8rem 0;box-shadow:0 26px 50px -28px rgba(28,23,23,.55);transform:rotate(-1.2deg)}
-.g26-photo img{width:100%;aspect-ratio:4/5;object-fit:cover}
-.g26-photo::after{content:"GYP ’26";display:block;text-align:center;font-family:var(--script);font-size:2.2rem;color:var(--red);padding:.3rem 0 .5rem}
-.gyp26 h2.head span{display:block;font-family:var(--script);text-transform:none;font-size:1.5em;color:var(--red);line-height:1}
-.g26-more{display:grid;grid-template-columns:1fr 1fr;gap:.6rem;margin-top:1.4rem}
-.g26-more img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:10px}
+/* 2026 group photos: short, wide row */
+.gyp26{background:var(--paper);padding-block:3.5rem}
+.g26-head{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:.6rem 2.5rem;margin-bottom:1.4rem}
+.g26-head > *{min-width:0}
+.g26-head h2.head{margin:0}
+.g26-head h2.head span{font-family:var(--script);text-transform:none;font-size:1.4em;color:var(--red);line-height:1}
+.g26-head p{max-width:30rem;margin:0;color:var(--muted)}
+.g26-row{display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:.7rem}
+.g26-row figure{margin:0;position:relative;min-width:0}
+.g26-row img{width:100%;height:clamp(12rem,22vw,17rem);object-fit:cover;border-radius:12px}
+.g26-row .main img{object-position:center 62%}
+.g26-row figcaption{position:absolute;left:.8rem;bottom:.7rem;background:var(--white);color:var(--red);font-family:var(--script);font-size:1.6rem;line-height:1;padding:.25rem .8rem .35rem;border-radius:999px}
+@media (max-width:700px){.g26-row{grid-template-columns:1fr 1fr}.g26-row .main{grid-column:1/-1}.g26-row img{height:11rem}.g26-row .main img{height:14rem}}
 
 /* fathers */
 .fathers{background:var(--brown);color:var(--white);padding-block:4rem;text-align:center}
@@ -424,19 +426,19 @@ footer ul a{text-underline-offset:3px}
     </div>
   </section>
 
-  <section class="pad gyp26">
-    <div class="wrap g26">
-      <figure class="g26-photo">
-        <img src="images/group-2026.jpg" alt="The Encounter 2026 group photo with our fathers the bishops">
-      </figure>
-      <div>
-        <div class="kicker">GYP ’26 · February 6–8, 2026</div>
-        <h2 class="head">Do not pass by <span>Your Servant</span></h2>
-        <p>Thank you to everyone who joined us in 2026, and to our beloved fathers for their presence. We can't wait to see you again in February 2027.</p>
-        <div class="g26-more">
-          <img src="images/outdoor.jpg" alt="Encounter attendees group photo outdoors">
-          <img src="images/hall.jpg" alt="Encounter attendees with the bishops in the conference hall">
+  <section class="gyp26">
+    <div class="wrap">
+      <div class="g26-head">
+        <div>
+          <div class="kicker">GYP ’26 · February 6–8, 2026</div>
+          <h2 class="head">Do not pass by <span>Your Servant</span></h2>
         </div>
+        <p>Thank you to everyone who joined us in 2026, and to our beloved fathers for their presence. We can't wait to see you again in February 2027.</p>
+      </div>
+      <div class="g26-row">
+        <figure class="main"><img src="images/group-2026.jpg" alt="The Encounter 2026 group photo with our fathers the bishops"><figcaption>GYP ’26</figcaption></figure>
+        <figure><img src="images/outdoor.jpg" alt="Encounter attendees group photo outdoors"></figure>
+        <figure><img src="images/hall.jpg" alt="Encounter attendees with the bishops in the conference hall"></figure>
       </div>
     </div>
   </section>
