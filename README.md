@@ -1,6 +1,6 @@
 # The Encounter Website
 
-Live at **https://theencountergypsus.org**
+Live at **https://norah100.github.io/The-Encounter-Website/**
 
 Website for The Encounter, the Grads & Young Professionals Convention of the Coptic Orthodox Diocese of the Southern United States.
 
@@ -18,4 +18,4 @@ Photos and the logo live in `images/`.
 
 GitHub Pages: Settings > Pages > Deploy from branch `main`, folder `/ (root)`.
 
-The custom domain `theencountergypsus.org` is set in the `CNAME` file. Don't delete it, or the site will fall back to the github.io address.
+To use the custom domain `theencountergypsus.org` later: point its DNS at GitHub Pages (4 A records for `@` to 185.199.108.153, .109.153, .110.153, .111.153, and a CNAME for `www` to `norah100.github.io`), then enter the domain under Settings > Pages > Custom domain.
