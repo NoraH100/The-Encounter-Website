@@ -95,6 +95,12 @@ section.pad{padding-block:4.5rem}
 .circle::after{content:"";position:absolute;right:-8%;top:40%;width:24%;aspect-ratio:1;border-radius:50%;background:var(--red)}
 .circle.grp{width:min(20rem,86%)}
 .circle.grp::after{right:1%;top:7%;width:13%}
+a.circle.grp{display:block;text-decoration:none;cursor:pointer}
+a.circle.grp img{transition:transform .25s ease,box-shadow .25s ease}
+a.circle.grp:hover img,a.circle.grp:focus-visible img{transform:translateY(-4px);box-shadow:0 26px 46px -20px rgba(138,26,31,.6)}
+.grp-hint{position:absolute;left:50%;bottom:6%;transform:translateX(-50%);background:var(--red);color:var(--white);font-weight:700;font-size:.78rem;letter-spacing:.04em;white-space:nowrap;padding:.4rem .9rem;border-radius:999px;opacity:0;transition:opacity .2s ease;z-index:2}
+a.circle.grp:hover .grp-hint,a.circle.grp:focus-visible .grp-hint{opacity:1}
+@media (hover:none){.grp-hint{opacity:1}}
 .person .who{font-weight:800;text-transform:uppercase;margin-top:1rem;line-height:1.1;color:var(--navy)}
 .person .who small{display:block;font-size:1rem;letter-spacing:.04em}
 .person .who span{display:block;font-size:clamp(1.5rem,3vw,2rem)}
@@ -433,7 +439,7 @@ footer ul a{text-underline-offset:3px}
         </div>
       </div>
       <div class="person">
-        <div class="circle grp"><img src="images/bishops-round.jpg" alt="H.E. Metropolitan Youssef with H.G. Bishop Basil and H.G. Bishop Gregory"></div>
+        <a class="circle grp" href="#theme" aria-label="Theme &amp; Speakers: meet our guest speaker and our beloved fathers"><img src="images/bishops-round.jpg" alt="H.E. Metropolitan Youssef with H.G. Bishop Basil and H.G. Bishop Gregory"><span class="grp-hint" aria-hidden="true">Theme &amp; Speakers →</span></a>
         <div class="who"><small>With our beloved</small><span>Metropolitan &amp; Bishops</span></div>
         <div class="from">H.E. Metropolitan Youssef · H.G. Bishop Basil · H.G. Bishop Gregory</div>
       </div>
