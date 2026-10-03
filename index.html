@@ -106,13 +106,12 @@ section.pad{padding-block:4.5rem}
 .hero .opens{display:inline-flex;align-items:center;gap:.5rem;background:var(--white);border:1.5px solid var(--line);border-radius:999px;padding:.4rem .9rem;font-size:.9rem;font-weight:700;margin-bottom:1.4rem}
 .hero .opens i{width:.55rem;height:.55rem;border-radius:50%;background:var(--red);display:block}
 
-/* hero bishops trio */
-.tri{position:relative;width:min(20rem,100%);aspect-ratio:1.05}
-.tri img{position:absolute;width:56%;aspect-ratio:1;object-fit:cover;border-radius:50%;border:6px solid var(--cream);box-shadow:0 16px 32px -18px rgba(138,26,31,.55)}
-.tri .t1{left:22%;top:0;z-index:2}
-.tri .t2{left:0;bottom:0}
-.tri .t3{right:0;bottom:0}
-.tri .dotr{position:absolute;right:4%;top:14%;width:14%;aspect-ratio:1;border-radius:50%;background:var(--red)}
+/* hero bishops photo */
+.bphoto{position:relative;width:100%;max-width:24rem}
+.bphoto img{width:100%;aspect-ratio:1100/911;object-fit:cover;border-radius:18px;border:7px solid var(--cream);box-shadow:0 22px 44px -22px rgba(138,26,31,.55)}
+.bphoto::after{content:"";position:absolute;right:-1.1rem;top:-1.1rem;width:3.2rem;aspect-ratio:1;border-radius:50%;background:var(--red);z-index:-1}
+.person{position:relative;z-index:0}
+/* hero bishops trio (unused) */
 .spkband{text-align:left}
 .spkband .head{margin-bottom:.6rem}
 .spkband p{color:var(--cream)}
@@ -262,6 +261,15 @@ section.pad{padding-block:4.5rem}
 .facts{display:flex;flex-wrap:wrap;gap:.5rem;list-style:none;padding:0;margin:1rem 0 1.4rem}
 .facts li{background:var(--blush);color:var(--red-deep);font-weight:700;font-size:.88rem;padding:.35rem .85rem;border-radius:999px}
 
+/* extend your stay */
+.stay{display:grid;grid-template-columns:1.3fr 1fr;gap:1.5rem 2.5rem;align-items:center;background:var(--white);border:1.5px solid var(--line);border-radius:16px;padding:1.8rem 2rem;margin-top:1.2rem}
+.stay > *{min-width:0}
+.stay h2.head{font-size:clamp(1.7rem,3.4vw,2.2rem);margin-bottom:.5rem}
+.stay p{margin:0;color:var(--muted)}
+.stay-btns{display:flex;flex-direction:column;gap:.7rem}
+.stay-btns .btn{width:100%}
+@media (max-width:760px){.stay{grid-template-columns:1fr}}
+
 /* travel page */
 .tsec{margin-top:3.5rem}
 .venue{display:grid;grid-template-columns:1.4fr 1fr;background:var(--white);border:1.5px solid var(--line);border-radius:16px;overflow:hidden}
@@ -283,15 +291,6 @@ section.pad{padding-block:4.5rem}
 .tcard-car .ico{width:2.6rem;height:2.6rem;border-radius:50%;background:rgba(255,255,255,.12);color:var(--rose);display:grid;place-items:center;margin-bottom:.7rem}
 .tcard-car .ico svg{width:20px;height:20px}
 .tcard-car p{color:#c9d3ee}
-.days3{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
-@media (max-width:860px){.days3{grid-template-columns:1fr}}
-.days3 li{background:var(--white);border:1.5px solid var(--line);border-radius:16px;overflow:hidden;min-width:0}
-.dhead{display:flex;justify-content:space-between;align-items:baseline;background:var(--red);color:var(--white);padding:.8rem 1.3rem}
-.dhead b{font-family:var(--poster);font-weight:400;text-transform:uppercase;font-size:1.4rem;letter-spacing:.02em}
-.dhead span{font-weight:700;font-size:.9rem;color:var(--rose)}
-.days3 p{margin:0;padding:1.1rem 1.3rem 1.3rem;color:var(--muted)}
-.days3 strong{color:var(--ink)}
-.days3 a{color:var(--red);font-weight:700}
 
 /* sunday social */
 .sshero{position:relative;color:var(--white);text-align:center;padding-block:clamp(4rem,9vw,6.5rem) clamp(6rem,11vw,8rem);background:linear-gradient(180deg,rgba(138,26,31,.82),rgba(110,74,54,.9)),url("images/riverboat.jpg") center 45%/cover var(--red)}
@@ -407,14 +406,9 @@ footer ul a{text-underline-offset:3px}
         </div>
       </div>
       <div class="person">
-        <div class="tri">
-          <img class="t1" src="images/metropolitan-youssef.jpg" alt="H.E. Metropolitan Youssef">
-          <img class="t2" src="images/bishop-basil.jpg" alt="H.G. Bishop Basil">
-          <img class="t3" src="images/bishop-gregory.jpg" alt="H.G. Bishop Gregory">
-          <span class="dotr" aria-hidden="true"></span>
-        </div>
+        <div class="bphoto"><img src="images/bishops.jpg" alt="H.G. Bishop Basil, H.E. Metropolitan Youssef and H.G. Bishop Gregory"></div>
         <div class="who"><small>With our beloved</small><span>Metropolitan &amp; Bishops</span></div>
-        <div class="from">H.E. Metropolitan Youssef · H.G. Bishop Basil · H.G. Bishop Gregory</div>
+        <div class="from">H.G. Bishop Basil · H.E. Metropolitan Youssef · H.G. Bishop Gregory</div>
       </div>
     </div>
     <svg class="curve" viewBox="0 0 1440 60" preserveAspectRatio="none" aria-hidden="true"><path d="M0 60V20Q720 70 1440 20V60z" style="fill:var(--red)"/></svg>
@@ -593,15 +587,6 @@ footer ul a{text-underline-offset:3px}
         </div>
       </div>
 
-      <div class="tsec">
-        <div class="kicker">Plan your weekend</div>
-        <h2 class="head">When to arrive &amp; leave</h2>
-        <ol class="days3">
-          <li><div class="dhead"><b>Friday</b><span>Feb 19</span></div><p><strong>Arrive in the afternoon</strong> for check-in and the opening session.</p></li>
-          <li><div class="dhead"><b>Saturday</b><span>Feb 20</span></div><p><strong>Full program:</strong> liturgy, talks, small groups and evening fellowship.</p></li>
-          <li><div class="dhead"><b>Sunday</b><span>Feb 21</span></div><p><strong>Divine Liturgy and closing.</strong> Joining the <a href="#social">Sunday Social</a> cruise? Book an evening flight.</p></li>
-        </ol>
-      </div>
     </div>
   </section>
 </div>
@@ -614,7 +599,7 @@ footer ul a{text-underline-offset:3px}
       <div class="glance" role="list">
         <div class="g" role="listitem"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4"/></svg></div><span><small>When</small><b>Sun, Feb 21 · Afternoon</b></span></div>
         <div class="g" role="listitem"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 18c1.5 1.3 3 1.3 4.5 0s3-1.3 4.5 0 3 1.3 4.5 0 3-1.3 4.5 0"/><path d="M5 15l1-5h12l1 5M9 10V6h6v4M11 6V3"/></svg></div><span><small>What</small><b>River cruise &amp; dinner</b></span></div>
-        <div class="g" role="listitem"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.8-3.6 3.4-5.5 6.5-5.5s5.7 1.9 6.5 5.5"/><path d="M16 4.6a3.5 3.5 0 0 1 0 6.8M18.5 14.8c1.6.8 2.6 2.5 3 5.2"/></svg></div><span><small>Who</small><b>Encounter attendees</b></span></div>
+        <div class="g" role="listitem"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.8-3.6 3.4-5.5 6.5-5.5s5.7 1.9 6.5 5.5"/><path d="M16 4.6a3.5 3.5 0 0 1 0 6.8M18.5 14.8c1.6.8 2.6 2.5 3 5.2"/></svg></div><span><small>Who</small><b>Encounter attendees only</b></span></div>
         <div class="g" role="listitem"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 8a2 2 0 0 0 2-2h14a2 2 0 0 0 2 2v2a2 2 0 0 0 0 4v2a2 2 0 0 0-2 2H5a2 2 0 0 0-2-2v-2a2 2 0 0 0 0-4z"/><path d="M14 6v12" stroke-dasharray="2 2"/></svg></div><span><small>Tickets</small><b>Add when you register</b></span></div>
       </div>
 
@@ -634,6 +619,19 @@ footer ul a{text-underline-offset:3px}
       <div class="tip">
         <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21 16v-2l-8-5V3.5a1.5 1.5 0 0 0-3 0V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5z"/></svg>
         <p><b>Flying out Sunday?</b> The cruise and dinner run into the evening, so book a later flight if you want to join.</p>
+      </div>
+
+      <div class="stay">
+        <div class="stay-txt">
+          <div class="kicker">Extend your stay</div>
+          <h2 class="head">Book an extra night</h2>
+          <p>Want to arrive early or stay after the Sunday Social? You can book an extra night before or after the convention.</p>
+        </div>
+        <div class="stay-btns">
+          <a class="btn" data-stay="before" target="_blank" rel="noopener">Book a night before</a>
+          <a class="btn btn-ghost" data-stay="after" target="_blank" rel="noopener">Book a night after</a>
+          <p class="note" data-stay-soon hidden>Booking links coming soon.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -759,6 +757,8 @@ var SITE = {
   registrationUrl: "https://www.zeffy.com/en-US/ticketing/the-encounter--2027-2",
   registrationOpens: "2026-11-01T20:00:00-05:00",   // Nov 1, 8:00 PM EST
   waitlistUrl: "",       // paste the waitlist form link here
+  extraNightBeforeUrl: "",   // paste the "book a night before" link here
+  extraNightAfterUrl: "",    // paste the "book a night after" link here
   email: "theencountergypsus@gmail.com"
 };
 
@@ -800,6 +800,14 @@ var SITE = {
     tick(); setInterval(tick, 1000);
   }
   document.getElementById('emailText').textContent = SITE.email;
+
+  /* extend your stay buttons */
+  var stayMissing = false;
+  document.querySelectorAll('[data-stay]').forEach(function(b){
+    var u = b.dataset.stay === 'before' ? SITE.extraNightBeforeUrl : SITE.extraNightAfterUrl;
+    if (u) b.href = u; else { b.removeAttribute('href'); b.setAttribute('aria-disabled','true'); stayMissing = true; }
+  });
+  document.querySelectorAll('[data-stay-soon]').forEach(function(n){ n.hidden = !stayMissing; });
 
   /* pages */
   var pages = ['home','theme','travel','social','contact','register'];
