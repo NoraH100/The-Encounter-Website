@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="The Encounter: Grads & Young Professionals Convention of the Coptic Orthodox Diocese of the Southern United States.">
+<meta name="description" content="The Encounter: Grads & Young Professionals Convention of the Coptic Orthodox Metropolis of the Southern United States.">
 <link rel="icon" href="images/logo.png">
 <link rel="canonical" href="https://norah100.github.io/The-Encounter-Website/">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://norah100.github.io/The-Encounter-Website/">
 <meta property="og:title" content="The Encounter">
-<meta property="og:description" content="Grads &amp; Young Professionals Convention of the Coptic Orthodox Diocese of the Southern United States. February 19–21, 2027 · Titusville, FL.">
+<meta property="og:description" content="Grads &amp; Young Professionals Convention of the Coptic Orthodox Metropolis of the Southern United States. February 19–21, 2027 · Titusville, FL.">
 <meta property="og:image" content="https://norah100.github.io/The-Encounter-Website/images/logo.png">
 <title>The Encounter</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -168,6 +168,10 @@ section.pad{padding-block:4.5rem}
 .duo .theme-title{margin:0}
 @media (max-width:700px){.duo{grid-template-columns:1fr}.duo > *{padding:1.4rem .5rem}.duo-theme{border-left:0;border-top:2px solid var(--line)}}
 
+.bio{margin-top:3rem;padding-top:2.5rem;border-top:2px solid var(--line)}
+.bio h2.head{font-size:clamp(1.7rem,3.4vw,2.3rem);margin-bottom:1rem}
+.bio p{font-size:1.08rem;line-height:1.8;color:var(--ink)}
+
 /* theme reflection */
 .reflect{background:var(--cream)}
 .reflect p{font-size:1.12rem;line-height:1.8;max-width:40rem}
@@ -320,6 +324,21 @@ section.pad{padding-block:4.5rem}
 .count small{font-size:.72rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
 .opensline{font-weight:800;font-size:1.15rem;margin-bottom:1rem}
 
+/* pricing */
+.price-note{color:var(--muted);margin:-.4rem 0 1.2rem}
+.prices{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-bottom:2.8rem}
+@media (max-width:700px){.prices{grid-template-columns:1fr}}
+.price{background:var(--white);border:1.5px solid var(--line);border-radius:16px;overflow:hidden;min-width:0}
+.price h3{margin:0;padding:1rem 1.2rem .1rem;font-family:var(--poster);font-weight:400;text-transform:uppercase;font-size:1.5rem;color:var(--navy)}
+.price small{display:block;padding:0 1.2rem .9rem;color:var(--muted);font-size:.85rem;border-bottom:1px solid var(--line)}
+.price dl{margin:0}
+.price dl div{display:flex;justify-content:space-between;align-items:baseline;padding:.75rem 1.2rem}
+.price dl div + div{border-top:1px solid var(--blush)}
+.price dt{font-weight:700;font-size:.92rem}
+.price dd{margin:0;font-family:var(--poster);font-size:1.7rem;color:var(--red);font-variant-numeric:tabular-nums}
+.reglink{margin:1rem 0 0;font-size:.9rem;color:var(--muted);word-break:break-word}
+.reglink a{color:var(--red);font-weight:700}
+
 /* register / waitlist */
 .before{font-weight:800;font-size:1.6rem;color:var(--red);margin:0 0 1rem}
 .rules{padding-left:1.4rem;margin:0 0 2.2rem;font-size:1.1rem;line-height:1.8}
@@ -417,7 +436,7 @@ footer ul a{text-underline-offset:3px}
   <section class="welcome">
     <div class="wrap narrow">
       <h2 class="head">Welcome to <span>The Encounter</span></h2>
-      <p>The Encounter is the graduates and young professionals convention of the Coptic Orthodox Diocese of the Southern United States. Every February, young adults ages 22–40 from across the diocese gather for a weekend of prayer, liturgy, talks and fellowship with our fathers the bishops and priests.</p>
+      <p>The Encounter is the graduates and young professionals convention of the Coptic Orthodox Metropolis of the Southern United States. Every February, young adults ages 22–40 from across the diocese gather for a weekend of prayer, liturgy, talks and fellowship with our fathers the bishops and priests.</p>
       <p>This year's theme is <a href="#theme">Walking Behind Him</a>. Join us for sessions with our guest speaker Fr. Anastasi Saint Antony, with the presence of our beloved fathers H.E. Metropolitan Youssef, H.G. Bishop Basil and H.G. Bishop Gregory.</p>
       <p>Registration opens <b>November 1 at 8:00 PM EST</b>. Stay tuned to our <a href="https://www.instagram.com/theencountergypsus/" target="_blank" rel="noopener">Instagram</a> and this site, and don't miss the <a href="#social">Sunday Social</a> river cruise. We can't wait to welcome you.</p>
     </div>
@@ -476,11 +495,11 @@ footer ul a{text-underline-offset:3px}
         <li><details><summary>What's The Encounter all about?</summary><div class="body"><p>A weekend retreat for grads and young professionals built around the liturgy, spiritual talks, small-group conversation and time with our fathers. Each year has its own theme. The 2027 theme is "Walking Behind Him." Past themes were "Do Not Pass By Your Servant" (2026) and "Into the Deep" (2025).</p></div></details></li>
         <li><details><summary>Who's invited?</summary><div class="body"><p>Graduates and young professionals ages 22–40.</p></div></details></li>
         <li><details><summary>How do I register?</summary><div class="body"><p>Registration opens <b>November 1 at 8:00 PM EST</b> on our <a href="#register">registration page</a>. Spots are limited, and both of the last two years filled up, so register early. You can add a Sunday Social ticket as part of your registration.</p></div></details></li>
-        <li><details><summary>Which airport should I use, and when should I arrive and leave?</summary><div class="body"><p>Orlando (MCO) or Melbourne (MLB). Plan to arrive Friday afternoon and leave Sunday evening if you're joining the social. See <a href="#travel">Travel &amp; Stay</a>.</p></div></details></li>
+        <li><details><summary>Which airport should I use, and when should I arrive and leave?</summary><div class="body"><p>Orlando (MCO) or Melbourne (MLB). <b>Check-in starts Friday at 2:00 PM</b>, so plan to arrive Friday afternoon, and leave Sunday evening if you're joining the social. See <a href="#travel">Travel &amp; Stay</a>.</p></div></details></li>
         <li><details><summary>Who is speaking this year?</summary><div class="body"><p>Our guest speaker is Fr. Anastasi Saint Antony from the Coptic Orthodox Diocese of New York &amp; New England, with the presence of H.E. Metropolitan Youssef, H.G. Bishop Basil and H.G. Bishop Gregory.</p></div></details></li>
         <li><details><summary>Will the convention provide transportation?</summary><div class="body"><p>We will share a carpool link so attendees can coordinate rides to and from the convention. Check back here and on our Instagram for the link.</p></div></details></li>
         <li><details><summary>What if it's full?</summary><div class="body"><p>Once registration closes, we'll open a waitlist on this site. If any spots open up, we'll reach out to you.</p></div></details></li>
-        <li><details><summary>Where can I ask questions and stay in the loop?</summary><div class="body"><p>Use our <a href="#contact">contact form</a>, email us, or DM us on Instagram at @theencountergypsus.</p></div></details></li>
+        <li><details><summary>Where can I ask questions and stay in the loop?</summary><div class="body"><p>Use our <a href="#contact">contact form</a>, email us at <a href="mailto:theencountergypsus@gmail.com">theencountergypsus@gmail.com</a>, or DM us on Instagram at <a href="https://www.instagram.com/theencountergypsus/" target="_blank" rel="noopener">@theencountergypsus</a>.</p></div></details></li>
       </ul>
     </div>
   </section>
@@ -501,6 +520,13 @@ footer ul a{text-underline-offset:3px}
         <div class="kicker">2027 Theme · Feb 19–21, 2027</div>
         <h2 class="theme-title">Walking<span>Behind Him</span></h2>
       </div>
+    </div>
+    <div class="wrap narrow bio">
+      <div class="kicker">About our guest speaker</div>
+      <h2 class="head">Hegumen Fr. Anastasi Saint Antony</h2>
+      <p>Hegumen Fr. Anastasi Saint Antony joined St. Antony Monastery in Newberry Springs, CA in 1997. He was tonsured a monk in 2001 and ordained a priest in 2003, delegated to serve at Saint Mark Coptic Orthodox Church in Honolulu, Hawaii.</p>
+      <p>Elevated to Hegumen by Pope Shenouda III in 2006, he served as Papal delegate and steward of St. Antony Monastery.</p>
+      <p>He now serves in the Diocese of New York &amp; New England, focusing on Youth Ministry and Mission &amp; Evangelism, and is currently establishing St. Bishoy's Monastic Order.</p>
     </div>
   </section>
   <section class="pad reflect">
@@ -557,7 +583,7 @@ footer ul a{text-underline-offset:3px}
     <div class="wrap">
       <div class="glance" role="list">
         <div class="g" role="listitem"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></div><span><small>Where</small><b>St. Stephen Retreat Center</b></span></div>
-        <div class="g" role="listitem"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4"/></svg></div><span><small>When</small><b>Fri–Sun, Feb 19–21, 2027</b></span></div>
+        <div class="g" role="listitem"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4"/></svg></div><span><small>When</small><b>Feb 19–21 · Check-in Fri 2:00 PM</b></span></div>
         <div class="g" role="listitem"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.5 3.5a1.5 1.5 0 0 1 3 0V9l8 5v2l-8-2.5V19l2 1.5V22L12 21l-3.5 1v-1.5l2-1.5v-5.5l-8 2.5v-2l8-5z"/></svg></div><span><small>Fly into</small><b>Orlando (MCO) or Melbourne (MLB)</b></span></div>
         <div class="g" role="listitem"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 17h14M4 17v-4l2-5h12l2 5v4M6 17v2M18 17v2"/><circle cx="7.5" cy="13.5" r="1"/><circle cx="16.5" cy="13.5" r="1"/></svg></div><span><small>Rides</small><b>Carpool link coming soon</b></span></div>
       </div>
@@ -567,7 +593,7 @@ footer ul a{text-underline-offset:3px}
         <div class="venue">
           <div class="venue-main">
             <h2 class="head">St. Stephen Christian Retreat &amp; Conference Center</h2>
-            <p>On Florida's Space Coast in Titusville. Lodging is at the retreat center, and details will be shared with registered attendees.</p>
+            <p>On Florida's Space Coast in Titusville. <b>Check-in starts Friday, February 19 at 2:00 PM.</b> Lodging is at the retreat center, and details will be shared with registered attendees.</p>
           </div>
           <div class="venue-addr">
             <small>Address</small>
@@ -646,6 +672,14 @@ footer ul a{text-underline-offset:3px}
     </div></div>
     <section class="pad">
       <div class="wrap narrow">
+        <h2 class="before">Pricing</h2>
+        <p class="price-note">Pricing depends on your room capacity.</p>
+        <div class="prices">
+          <div class="price"><h3>Quad Room</h3><small>4 per room</small><dl><div><dt>Early Bird</dt><dd>$260</dd></div><div><dt>Regular</dt><dd>$280</dd></div></dl></div>
+          <div class="price"><h3>Double Room</h3><small>2 per room</small><dl><div><dt>Early Bird</dt><dd>$290</dd></div><div><dt>Regular</dt><dd>$310</dd></div></dl></div>
+          <div class="price"><h3>Single Room</h3><small>1 per room</small><dl><div><dt>Early Bird</dt><dd>$350</dd></div><div><dt>Regular</dt><dd>$370</dd></div></dl></div>
+        </div>
+
         <h2 class="before">Before you register:</h2>
         <ol class="rules">
           <li>After the convention wraps up Sunday, we'll have our <a href="#social">Sunday Social</a>. You can add a ticket as part of your registration!</li>
@@ -661,7 +695,8 @@ footer ul a{text-underline-offset:3px}
               <li><b data-s>0</b><small>Sec</small></li>
             </ul>
           </div>
-          <a class="btn" data-go target="_blank" rel="noopener">Register</a><p class="note" data-soon hidden>The registration link will be posted here soon.</p>
+          <a class="btn" data-go target="_blank" rel="noopener">Register on Zeffy</a><p class="note" data-soon hidden>The registration link will be posted here soon.</p>
+          <p class="reglink">Registration link: <a href="https://www.zeffy.com/en-US/ticketing/the-encounter--2027-2" target="_blank" rel="noopener">zeffy.com/en-US/ticketing/the-encounter--2027-2</a></p>
         </div>
       </div>
     </section>
@@ -742,7 +777,7 @@ footer ul a{text-underline-offset:3px}
         </ul>
       </div>
     </div>
-    <p class="small">The Encounter · Grads &amp; Young Professionals Convention · Coptic Orthodox Diocese of the Southern United States</p>
+    <p class="small">The Encounter · Grads &amp; Young Professionals Convention · Coptic Orthodox Metropolis of the Southern United States</p>
   </div>
 </footer>
 
@@ -787,7 +822,6 @@ var SITE = {
   if (notYet && cd && go) {
     cd.hidden = false;
     document.querySelector('[data-reg-title]').textContent = 'Registration Opens Soon!';
-    go.removeAttribute('href'); go.setAttribute('aria-disabled','true'); go.textContent = 'Opens Nov 1 · 8:00 PM EST';
     var tick = function(){
       var ms = opensAt - Date.now();
       if (ms <= 0) { location.reload(); return; }
