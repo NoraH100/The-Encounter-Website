@@ -115,12 +115,14 @@ a.circle.grp:hover .grp-hint,a.circle.grp:focus-visible .grp-hint{opacity:1}
 .hero .opens i{width:.55rem;height:.55rem;border-radius:50%;background:var(--red);display:block}
 
 /* hero bishops trio: Metropolitan on top, center; light touch between frames */
-.tri{position:relative;width:min(21rem,100%);aspect-ratio:1.17}
+.tri{position:relative;display:block;width:min(21rem,100%);aspect-ratio:1.17;text-decoration:none}
 .tri img{position:absolute;aspect-ratio:1;object-fit:cover;border-radius:50%;border:5px solid var(--white);background:var(--white);box-shadow:0 14px 30px -16px rgba(110,74,54,.45);transition:transform .25s ease}
-.tri img:hover{transform:translateY(-4px)}
-.tri .t1{width:50%;left:25%;top:0;z-index:2}
-.tri .t2{width:46%;left:0;bottom:0;z-index:1}
-.tri .t3{width:46%;right:0;bottom:0;z-index:1}
+a.tri:hover img,a.tri:focus-visible img{transform:translateY(-4px)}
+a.tri:hover .grp-hint,a.tri:focus-visible .grp-hint{opacity:1}
+.tri .grp-hint{bottom:-.4rem;z-index:5}
+.tri .t1{width:46%;left:27%;top:0;z-index:2}
+.tri .t2{width:44%;left:0;bottom:0;z-index:1}
+.tri .t3{width:44%;right:0;bottom:0;z-index:1}
 .tri .dotr{position:absolute;z-index:3;right:10%;top:8%;width:9%;aspect-ratio:1;border-radius:50%;background:var(--red)}
 /* hero bishops photo (unused) */
 .bphoto{position:relative;width:100%;max-width:24rem}
@@ -440,7 +442,13 @@ footer ul a{text-underline-offset:3px}
         </div>
       </div>
       <div class="person">
-        <a class="circle grp" href="#theme" aria-label="Theme &amp; Speakers: meet our guest speaker and our beloved fathers"><img src="images/bishops-round.jpg" alt="H.E. Metropolitan Youssef with H.G. Bishop Basil and H.G. Bishop Gregory"><span class="grp-hint" aria-hidden="true">Theme &amp; Speakers →</span></a>
+        <a class="tri" href="#theme" aria-label="Theme &amp; Speakers: meet our guest speaker and our beloved fathers">
+          <img class="t1" src="images/metropolitan-youssef.jpg" alt="H.E. Metropolitan Youssef">
+          <img class="t2" src="images/bishop-basil.jpg" alt="H.G. Bishop Basil">
+          <img class="t3" src="images/bishop-gregory.jpg" alt="H.G. Bishop Gregory">
+          <span class="dotr" aria-hidden="true"></span>
+          <span class="grp-hint" aria-hidden="true">Theme &amp; Speakers →</span>
+        </a>
         <div class="who"><small>With our beloved</small><span>Metropolitan &amp; Bishops</span></div>
         <div class="from">H.E. Metropolitan Youssef · H.G. Bishop Basil · H.G. Bishop Gregory</div>
       </div>
