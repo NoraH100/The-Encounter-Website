@@ -106,14 +106,14 @@ section.pad{padding-block:4.5rem}
 .hero .opens{display:inline-flex;align-items:center;gap:.5rem;background:var(--white);border:1.5px solid var(--line);border-radius:999px;padding:.4rem .9rem;font-size:.9rem;font-weight:700;margin-bottom:1.4rem}
 .hero .opens i{width:.55rem;height:.55rem;border-radius:50%;background:var(--red);display:block}
 
-/* hero bishops trio: Metropolitan on top, center */
-.tri{position:relative;width:min(20rem,100%);aspect-ratio:1.05}
-.tri img{position:absolute;width:56%;aspect-ratio:1;object-fit:cover;border-radius:50%;border:6px solid var(--cream);background:var(--white);box-shadow:0 16px 32px -18px rgba(138,26,31,.55)}
-.tri .t1{left:19%;top:0;width:62%;z-index:3}
-.tri .t2,.tri .t3{z-index:1}
-.tri .t2{left:0;bottom:0}
-.tri .t3{right:0;bottom:0}
-.tri .dotr{position:absolute;z-index:4;right:2%;top:12%;width:14%;aspect-ratio:1;border-radius:50%;background:var(--red)}
+/* hero bishops trio: Metropolitan on top, center; light touch between frames */
+.tri{position:relative;width:min(21rem,100%);aspect-ratio:1.17}
+.tri img{position:absolute;aspect-ratio:1;object-fit:cover;border-radius:50%;border:5px solid var(--white);background:var(--white);box-shadow:0 14px 30px -16px rgba(110,74,54,.45);transition:transform .25s ease}
+.tri img:hover{transform:translateY(-4px)}
+.tri .t1{width:50%;left:25%;top:0;z-index:2}
+.tri .t2{width:46%;left:0;bottom:0;z-index:1}
+.tri .t3{width:46%;right:0;bottom:0;z-index:1}
+.tri .dotr{position:absolute;z-index:3;right:10%;top:8%;width:9%;aspect-ratio:1;border-radius:50%;background:var(--red)}
 .person .from b{color:var(--navy)}
 /* hero bishops photo (unused) */
 .bphoto{position:relative;width:100%;max-width:24rem}
