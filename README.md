@@ -1,6 +1,6 @@
 # The Encounter Website
 
-Live at **https://norah100.github.io/The-Encounter-Website/**
+Live at **https://theencountergypsus.org**
 
 Website for The Encounter, the Grads & Young Professionals Convention of the Coptic Orthodox Diocese of the Southern United States.
 
@@ -18,4 +18,4 @@ Photos and the logo live in `images/`.
 
 GitHub Pages: Settings > Pages > Deploy from branch `main`, folder `/ (root)`.
 
-To switch to the custom domain `theencountergypsus.org` later: add a `CNAME` file containing the domain, and set DNS at Namecheap: 4 A records for `@` to 185.199.108.153, 185.199.109.153, 185.199.110.153, 185.199.111.153, and a CNAME for `www` to `norah100.github.io`.
+The custom domain `theencountergypsus.org` is set in the `CNAME` file (keep it). DNS at Namecheap: 4 A records for `@` to 185.199.108.153, 185.199.109.153, 185.199.110.153, 185.199.111.153, and a CNAME for `www` to `norah100.github.io`.
