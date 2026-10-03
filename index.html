@@ -111,7 +111,10 @@ section.pad{padding-block:4.5rem}
 .bphoto img{width:100%;aspect-ratio:1100/911;object-fit:cover;border-radius:18px;border:7px solid var(--cream);box-shadow:0 22px 44px -22px rgba(138,26,31,.55)}
 .bphoto::after{content:"";position:absolute;right:-1.1rem;top:-1.1rem;width:3.2rem;aspect-ratio:1;border-radius:50%;background:var(--red);z-index:-1}
 .person{position:relative;z-index:0}
-/* hero bishops trio (unused) */
+.names{display:grid;grid-template-columns:1fr 1.25fr 1fr;list-style:none;margin:.8rem 0 0;padding:0;max-width:24rem;text-align:center}
+.names li{font-weight:700;font-size:.82rem;line-height:1.2;color:var(--ink);padding:0 .2rem;min-width:0}
+.names small{display:block;font-size:.66rem;letter-spacing:.14em;color:var(--red);font-weight:800}
+.names .mid{color:var(--navy);font-size:.9rem}
 .spkband{text-align:left}
 .spkband .head{margin-bottom:.6rem}
 .spkband p{color:var(--cream)}
@@ -425,8 +428,8 @@ footer ul a{text-underline-offset:3px}
       </div>
       <div class="person">
         <div class="bphoto"><img src="images/bishops.jpg" alt="H.G. Bishop Basil, H.E. Metropolitan Youssef and H.G. Bishop Gregory"></div>
+        <ul class="names"><li><small>H.G.</small>Bishop Basil</li><li class="mid"><small>H.E.</small>Metropolitan Youssef</li><li><small>H.G.</small>Bishop Gregory</li></ul>
         <div class="who"><small>With our beloved</small><span>Metropolitan &amp; Bishops</span></div>
-        <div class="from">H.G. Bishop Basil · H.E. Metropolitan Youssef · H.G. Bishop Gregory</div>
       </div>
     </div>
     <svg class="curve" viewBox="0 0 1440 60" preserveAspectRatio="none" aria-hidden="true"><path d="M0 60V20Q720 70 1440 20V60z" style="fill:var(--red)"/></svg>
