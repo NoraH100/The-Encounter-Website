@@ -386,6 +386,10 @@ input:focus,textarea:focus{outline:none;border-color:var(--red)}
 .ok h3{font-family:var(--serif);margin:0 0 .4rem;font-size:1.6rem;color:var(--red)}
 .err{color:var(--red-deep);font-weight:600}
 
+.fallback{background:var(--white);border:1.5px solid var(--red);border-radius:12px;padding:1.1rem 1.2rem;display:grid;gap:.8rem}
+.fallback p{margin:0}
+.fallback .btn{justify-self:start}
+
 /* footer */
 footer{background:var(--blush);padding-block:3.5rem 2rem;border-top:4px solid var(--red)}
 footer .cols{display:grid;grid-template-columns:1fr 1fr 1fr;gap:2rem;align-items:start}
@@ -758,7 +762,11 @@ footer ul a{text-underline-offset:3px}
           <label for="cMsg">Message <small>(required)</small><textarea id="cMsg" name="message" required></textarea></label>
           <input type="text" name="_honey" id="cHoney" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
           <div><button class="btn" type="submit" id="cSubmit">Submit</button></div>
-          <p class="err" id="cErr" hidden></p>
+          <div class="fallback" id="cErr" hidden>
+            <p><b>We couldn't send this through the website right now.</b> Your message is still here. Tap below to send it from your email app; we've filled it in for you.</p>
+            <a class="btn" id="cMail" href="#">Send by email</a>
+            <p class="note">Or email us at <b>theencountergypsus@gmail.com</b></p>
+          </div>
         </form>
         <div class="ok" id="cDone" hidden>
           <h3>Thank you!</h3>
@@ -809,7 +817,8 @@ var SITE = {
   waitlistUrl: "",       // paste the waitlist form link here
   extraNightBeforeUrl: "",   // paste the "book a night before" link here
   extraNightAfterUrl: "",    // paste the "book a night after" link here
-  email: "theencountergypsus@gmail.com"
+  email: "theencountergypsus@gmail.com",
+  web3formsKey: ""   // optional: paste a Web3Forms access key here to send the contact form through Web3Forms instead of FormSubmit
 };
 
 (function(){
@@ -893,32 +902,35 @@ var SITE = {
     if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(SITE.email).then(done, fallback); else fallback();
   });
 
-  /* contact form: sends through FormSubmit to SITE.email */
+  /* contact form: Web3Forms if a key is set, otherwise FormSubmit; on any failure, offer a prefilled email */
   var form = document.getElementById('contactForm'), err = document.getElementById('cErr');
+  function done(){ form.hidden = true; document.getElementById('cDone').hidden = false; }
+  function sendWeb3(name, email, msg){
+    return fetch('https://api.web3forms.com/submit', { method: 'POST', headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify({ access_key: SITE.web3formsKey, subject: 'Website message from ' + name, from_name: 'The Encounter website', name: name, email: email, replyto: email, message: msg }) })
+      .then(function(r){ return r.json(); })
+      .then(function(j){ if (!j || j.success !== true) throw new Error(j && j.message); });
+  }
+  function sendFormSubmit(name, email, msg){
+    return fetch('https://formsubmit.co/ajax/' + SITE.email, { method: 'POST', headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify({ 'Name': name, 'Email': email, 'Message': msg, '_replyto': email, '_subject': 'Website message from ' + name, '_template': 'table', '_captcha': 'false' }) })
+      .then(function(r){ return r.json(); })
+      .then(function(j){ if (!j || String(j.success) !== 'true') throw new Error(j && j.message); });
+  }
   form.addEventListener('submit', function(e){
     e.preventDefault();
     err.hidden = true;
     if (!form.reportValidity()) return;
+    if (form._honey.value) { done(); return; }
     var btn = document.getElementById('cSubmit'); btn.disabled = true; btn.textContent = 'Sending…';
-    if (form._honey.value) { form.hidden = true; document.getElementById('cDone').hidden = false; return; }
     var name = form.first_name.value.trim() + ' ' + form.last_name.value.trim();
-    var data = {
-      'Name': name,
-      'Email': form.email.value.trim(),
-      'Message': form.message.value.trim(),
-      '_replyto': form.email.value.trim(),
-      '_subject': 'Website message from ' + name,
-      '_template': 'table'
-    };
-    fetch('https://formsubmit.co/ajax/' + SITE.email, { method: 'POST', headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' }, body: JSON.stringify(data) })
-      .then(function(r){ if (!r.ok) throw new Error(); return r.json(); })
-      .then(function(j){
-        if (!j || String(j.success) !== 'true') throw new Error(j && j.message);
-        form.hidden = true; document.getElementById('cDone').hidden = false;
-      })
+    var email = form.email.value.trim(), msg = form.message.value.trim();
+    (SITE.web3formsKey ? sendWeb3(name, email, msg) : sendFormSubmit(name, email, msg))
+      .then(done)
       .catch(function(){
-        err.textContent = "Your message couldn't be sent from here. Please email us at " + SITE.email + " instead.";
-        err.hidden = false; btn.disabled = false; btn.textContent = 'Submit';
+        var body = 'Name: ' + name + '\nEmail: ' + email + '\n\n' + msg;
+        document.getElementById('cMail').href = 'mailto:' + SITE.email + '?subject=' + encodeURIComponent('Website message from ' + name) + '&body=' + encodeURIComponent(body);
+        err.hidden = false; btn.disabled = false; btn.textContent = 'Try again';
       });
   });
 
