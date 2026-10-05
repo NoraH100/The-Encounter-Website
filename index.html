@@ -805,6 +805,14 @@ footer ul a{text-underline-offset:3px}
 </footer>
 
 <script>
+/* Tidy the address bar: drop tracking tags such as ?utm_source=ig that Instagram and other apps add */
+(function(){
+  try {
+    if (location.search && window.history && history.replaceState) {
+      history.replaceState(null, '', location.pathname + location.hash);
+    }
+  } catch (e) {}
+})();
 /* ============================================================
    SITE SETTINGS: edit these when things change
    mode: "register" while registration is open,
