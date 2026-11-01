@@ -29,6 +29,7 @@
   color-scheme:light;
 }
 *{box-sizing:border-box}
+[hidden]{display:none!important}
 @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
 body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:1.05rem;line-height:1.65}
 a{color:inherit}
@@ -349,8 +350,8 @@ a.circle.grp:hover img,a.circle.grp:focus-visible img{transform:translateY(-4px)
 
 /* register top box */
 .regtop .kicker{color:var(--rose)}
-.regtop h1.opens-title{font-size:clamp(2rem,6vw,3.6rem);line-height:1.05;max-width:46rem;margin:0 auto}
-.regtop .count{margin:1.8rem auto 1.8rem}
+.regtop h1.opens-title{font-size:clamp(2rem,6vw,3.6rem);line-height:1.05;max-width:46rem;margin:0 auto 1.8rem}
+.regtop .count{margin:0 auto 1.8rem}
 .regtop .count li{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.22)}
 .regtop .count b{color:var(--white)}
 .regtop .count small{color:#c9d3ee}
@@ -822,7 +823,7 @@ var SITE = {
   mode: "register",
   registrationUrl: "https://www.zeffy.com/en-US/ticketing/the-encounter--2027-2",
   registrationOpens: "2026-11-01T20:00:00-05:00",   // Nov 1, 8:00 PM EST
-  waitlistUrl: "",       // paste the waitlist form link here
+  waitlistUrl: "https://forms.gle/4XZMskT4zXdeQVHFA",   // Google Form for the waitlist
   extraNightBeforeUrl: "",   // paste the "book a night before" link here
   extraNightAfterUrl: "",    // paste the "book a night after" link here
   email: "theencountergypsus@gmail.com",
