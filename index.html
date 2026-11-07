@@ -394,6 +394,21 @@ input:focus,textarea:focus{outline:none;border-color:var(--red)}
 .fallback p{margin:0}
 .fallback .btn{justify-self:start}
 
+/* social + stay pop-up */
+.promo{position:fixed;inset:0;z-index:50;display:grid;place-items:center;padding:1rem;background:rgba(28,23,23,.55);animation:promoFade .25s ease}
+.promo-card{position:relative;width:min(26rem,100%);max-height:calc(100vh - 2rem);overflow:auto;background:var(--paper);box-shadow:0 30px 60px -20px rgba(0,0,0,.5);border-top:5px solid var(--red)}
+.promo-card:focus{outline:none}
+.promo-img{width:100%;height:9.5rem;object-fit:cover}
+.promo-body{padding:1.4rem 1.5rem 1.6rem;text-align:center}
+.promo-body h2{font-family:var(--poster);font-weight:400;text-transform:uppercase;font-size:clamp(1.6rem,6vw,2rem);line-height:1.05;margin:.2rem 0 .7rem}
+.promo-body p{margin:0 0 1.2rem;color:var(--muted);font-size:.98rem}
+.promo-btns{display:grid;gap:.6rem}
+.promo-btns .btn{width:100%}
+.promo-note{display:block;margin-top:.9rem;font-size:.78rem;color:var(--muted)}
+.promo-x{position:absolute;top:.5rem;right:.5rem;width:2.3rem;height:2.3rem;border-radius:50%;border:0;background:rgba(255,255,255,.92);color:var(--ink);font-size:1.6rem;line-height:1;cursor:pointer;box-shadow:0 4px 12px rgba(0,0,0,.25)}
+@keyframes promoFade{from{opacity:0}to{opacity:1}}
+@media (prefers-reduced-motion:reduce){.promo{animation:none}}
+
 /* footer */
 footer{background:var(--blush);padding-block:3.5rem 2rem;border-top:4px solid var(--red)}
 footer .cols{display:grid;grid-template-columns:1fr 1fr 1fr;gap:2rem;align-items:start}
@@ -780,6 +795,23 @@ footer ul a{text-underline-offset:3px}
 </div>
 </main>
 
+<div class="promo" id="promo" hidden role="dialog" aria-modal="true" aria-labelledby="promoTitle">
+  <div class="promo-card" id="promoCard" tabindex="-1">
+    <button type="button" class="promo-x" id="promoClose" aria-label="Close">&times;</button>
+    <img src="images/riverboat.jpg" alt="" class="promo-img">
+    <div class="promo-body">
+      <div class="kicker">The Encounter 2027 · Feb 19–21</div>
+      <h2 id="promoTitle">Join the social &amp; extend your stay</h2>
+      <p>Sunday Social river cruise and dinner with our beloved fathers on Feb 21, plus the option to book an extra night at St. Stephen.</p>
+      <div class="promo-btns">
+        <a class="btn" href="https://www.zeffy.com/en-US/ticketing/the-encounter-2027-sunday-social" target="_blank" rel="noopener">Join the Sunday Social</a>
+        <a class="btn btn-ghost" href="https://www.zeffy.com/en-US/ticketing/staying-extra-night-at-st-stephen--2027" target="_blank" rel="noopener">Extend your stay</a>
+      </div>
+      <small class="promo-note">The Sunday Social is for registered Encounter attendees.</small>
+    </div>
+  </div>
+</div>
+
 <footer>
   <div class="wrap">
     <div class="cols">
@@ -943,6 +975,20 @@ var SITE = {
         err.hidden = false; btn.disabled = false; btn.textContent = 'Try again';
       });
   });
+
+  /* social + stay pop-up: once per visitor, closes with X, outside tap or Escape */
+  (function(){
+    var promo = document.getElementById('promo'); if (!promo) return;
+    var KEY = 'encounterPromoSeen2027', seen = false;
+    try { seen = localStorage.getItem(KEY) === '1'; } catch(e) {}
+    if (seen) return;
+    function close(){ promo.hidden = true; try { localStorage.setItem(KEY,'1'); } catch(e) {} document.removeEventListener('keydown', onKey); }
+    function onKey(e){ if (e.key === 'Escape') close(); }
+    document.getElementById('promoClose').addEventListener('click', close);
+    promo.addEventListener('click', function(e){ if (e.target === promo) close(); });
+    promo.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', close); });
+    setTimeout(function(){ promo.hidden = false; document.addEventListener('keydown', onKey); document.getElementById('promoCard').focus({preventScroll:true}); }, 1500);
+  })();
 
   show();
 })();
