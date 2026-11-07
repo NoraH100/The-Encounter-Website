@@ -976,13 +976,10 @@ var SITE = {
       });
   });
 
-  /* social + stay pop-up: once per visitor, closes with X, outside tap or Escape */
+  /* social + stay pop-up: opens every time the site loads; closes with X, outside tap or Escape */
   (function(){
     var promo = document.getElementById('promo'); if (!promo) return;
-    var KEY = 'encounterPromoSeen2027', seen = false;
-    try { seen = localStorage.getItem(KEY) === '1'; } catch(e) {}
-    if (seen) return;
-    function close(){ promo.hidden = true; try { localStorage.setItem(KEY,'1'); } catch(e) {} document.removeEventListener('keydown', onKey); }
+    function close(){ promo.hidden = true; document.removeEventListener('keydown', onKey); }
     function onKey(e){ if (e.key === 'Escape') close(); }
     document.getElementById('promoClose').addEventListener('click', close);
     promo.addEventListener('click', function(e){ if (e.target === promo) close(); });
